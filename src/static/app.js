@@ -1,464 +1,273 @@
-
 /*
 =========================================
-AWN AI — Application Logic
+AWN AI — Application logic
+Talks to POST /api/chat and GET /health
 =========================================
 */
 
 document.addEventListener("DOMContentLoaded", () => {
 
-    // DOM Elements
     const chatForm = document.getElementById("chat-form");
     const messageInput = document.getElementById("message-input");
     const messagesContainer = document.getElementById("messages");
+    const conversation = document.getElementById("conversation");
     const sendButton = document.getElementById("send-button");
     const newChatButton = document.getElementById("new-chat-button");
     const characterCount = document.getElementById("character-count");
+    const statusBox = document.querySelector(".header-status");
+    const statusText = document.getElementById("status-text");
 
-    // Preserve the original welcome screen
-    const welcomeTemplate = document
-        .getElementById("empty-chat")
-        ?.cloneNode(true);
+    const MAX_LENGTH = 2000;
+
+    const SCOPE_LABELS = {
+        IN_SCOPE: "Answered from knowledge base",
+        OUT_OF_SCOPE: "Outside what AWN supports",
+        UNCLEAR_SCOPE: "Needs more detail"
+    };
 
     let isWaiting = false;
 
 
-    // =====================================
-    // Helpers
-    // =====================================
+    // ---------- Helpers ----------
+
+    function el(tag, className, text) {
+        const node = document.createElement(tag);
+        if (className) node.className = className;
+        if (text) node.textContent = text;
+        return node;
+    }
+
+    function prettify(value) {
+        // "track_order" -> "Track order"
+        const text = String(value).replace(/_/g, " ").trim().toLowerCase();
+        return text.charAt(0).toUpperCase() + text.slice(1);
+    }
 
     function scrollToBottom() {
-        messagesContainer.scrollTop = messagesContainer.scrollHeight;
+        // The page scrolls (not the message box), so the newest message stays visible above the composer
+        window.scrollTo({ top: document.documentElement.scrollHeight, behavior: "smooth" });
     }
-
-
-    function createElement(tag, className, text = "") {
-        const element = document.createElement(tag);
-
-        if (className) {
-            element.className = className;
-        }
-
-        if (text) {
-            element.textContent = text;
-        }
-
-        return element;
-    }
-
 
     function updateCharacterCount() {
-        const currentLength = messageInput.value.length;
-        characterCount.textContent = `${currentLength} / 2000`;
+        characterCount.textContent = `${messageInput.value.length} / ${MAX_LENGTH}`;
+    }
+
+    function resizeInput() {
+        messageInput.style.height = "auto";
+        messageInput.style.height = Math.min(messageInput.scrollHeight, 120) + "px";
+    }
+
+    function setBusy(busy) {
+        isWaiting = busy;
+        sendButton.disabled = busy;
+        messageInput.disabled = busy;
+        newChatButton.disabled = busy;
+        document.querySelectorAll(".chip, .topic").forEach((b) => { b.disabled = busy; });
     }
 
 
-    function hideWelcome() {
-        const emptyChat = document.getElementById("empty-chat");
+    // ---------- Conversation mode ----------
 
-        if (emptyChat) {
-            emptyChat.remove();
-        }
+    function startChatMode() {
+        document.body.classList.add("is-chatting");
+        conversation.hidden = false;
+    }
+
+    function endChatMode() {
+        document.body.classList.remove("is-chatting");
+        conversation.hidden = true;
+        messagesContainer.replaceChildren();
     }
 
 
-    function showWelcome() {
-        if (!welcomeTemplate) {
-            return;
-        }
-
-        messagesContainer.replaceChildren(
-            welcomeTemplate.cloneNode(true)
-        );
-    }
-
-
-    // =====================================
-    // User Messages
-    // =====================================
+    // ---------- Messages ----------
 
     function addUserMessage(content) {
-
-        hideWelcome();
-
-        const message = createElement("div", "message user");
-
-        const label = createElement(
-            "span",
-            "message-label",
-            "You"
-        );
-
-        const bubble = createElement(
-            "div",
-            "message-bubble",
-            content
-        );
-
-        message.appendChild(label);
-        message.appendChild(bubble);
-
+        const message = el("div", "message user");
+        message.append(el("span", "message-label", "You"), el("div", "message-bubble", content));
         messagesContainer.appendChild(message);
-
         scrollToBottom();
     }
-
-
-    // =====================================
-    // Assistant Messages
-    // =====================================
 
     function addAssistantMessage(data) {
+        const message = el("div", "message assistant");
+        const bubble = el("div", "message-bubble", data.response || "I couldn’t generate a response. Please try again.");
 
-        const message = createElement("div", "message assistant");
+        message.append(el("span", "message-label", "AWN"), bubble);
 
-        const label = createElement(
-            "span",
-            "message-label",
-            "AWN Assistant"
-        );
-
-        const bubble = createElement("div", "message-bubble");
-
-        const responseText =
-            data.response ||
-            "I couldn't generate a response. Please try again.";
-
-        bubble.textContent = responseText;
-
-        message.appendChild(label);
-        message.appendChild(bubble);
-
-
-        // Scope Status
+        // Scope + intent tags
+        const tags = el("div", "message-tags");
         if (data.scope) {
-
-            const statusLabels = {
-                IN_SCOPE: "Within service scope",
-                OUT_OF_SCOPE: "Outside service scope",
-                UNCLEAR_SCOPE: "Needs clarification"
-            };
-
-            const status = createElement(
-                "span",
-                "message-status",
-                statusLabels[data.scope] || data.scope
-            );
-
-            message.appendChild(status);
+            const warn = data.scope !== "IN_SCOPE";
+            tags.appendChild(el("span", warn ? "tag warn" : "tag", SCOPE_LABELS[data.scope] || data.scope));
         }
+        if (data.intent) tags.appendChild(el("span", "tag", prettify(data.intent)));
+        if (tags.childNodes.length) message.appendChild(tags);
 
-
-        // Knowledge Sources
+        // Knowledge sources
         if (Array.isArray(data.sources) && data.sources.length > 0) {
-
-            const sourcesBox = createElement("details", "sources-box");
-
-            const summary = createElement(
-                "summary",
-                "",
-                `View sources (${data.sources.length})`
-            );
-
-            sourcesBox.appendChild(summary);
+            const box = el("details", "sources-box");
+            box.appendChild(el("summary", "", `View sources (${data.sources.length})`));
 
             data.sources.forEach((source, index) => {
+                const item = el("div", "source-item");
+                const title = source.title || source.section || source.name || `Knowledge source ${index + 1}`;
+                const body = source.content || source.text || source.chunk || "";
 
-                const sourceItem = createElement(
-                    "div",
-                    "source-item"
-                );
-
-                const sourceTitle =
-                    source.title ||
-                    source.section ||
-                    source.name ||
-                    `Knowledge source ${index + 1}`;
-
-                const sourceContent =
-                    source.content ||
-                    source.text ||
-                    source.chunk ||
-                    "";
-
-                const title = createElement(
-                    "strong",
-                    "",
-                    sourceTitle
-                );
-
-                sourceItem.appendChild(title);
-
-                if (sourceContent) {
-
-                    const content = createElement(
-                        "p",
-                        "",
-                        sourceContent
-                    );
-
-                    sourceItem.appendChild(content);
-                }
-
-                sourcesBox.appendChild(sourceItem);
+                item.appendChild(el("strong", "", title));
+                if (body) item.appendChild(el("p", "", body));
+                box.appendChild(item);
             });
 
-            bubble.appendChild(sourcesBox);
+            message.appendChild(box);
         }
 
-
         messagesContainer.appendChild(message);
-
         scrollToBottom();
     }
-
-
-    // =====================================
-    // Typing Indicator
-    // =====================================
 
     function showTypingIndicator() {
-
         removeTypingIndicator();
-
-        const message = createElement(
-            "div",
-            "message assistant"
-        );
-
+        const message = el("div", "message assistant");
         message.id = "typing-message";
 
-        const label = createElement(
-            "span",
-            "message-label",
-            "AWN Assistant"
-        );
+        const bubble = el("div", "message-bubble typing-indicator");
+        bubble.setAttribute("aria-label", "AWN is typing");
+        for (let i = 0; i < 3; i++) bubble.appendChild(document.createElement("span"));
 
-        const bubble = createElement(
-            "div",
-            "message-bubble typing-indicator"
-        );
-
-        for (let i = 0; i < 3; i++) {
-            bubble.appendChild(
-                document.createElement("span")
-            );
-        }
-
-        message.appendChild(label);
-        message.appendChild(bubble);
-
+        message.append(el("span", "message-label", "AWN"), bubble);
         messagesContainer.appendChild(message);
-
         scrollToBottom();
     }
 
-
     function removeTypingIndicator() {
-
-        const typingMessage = document.getElementById(
-            "typing-message"
-        );
-
-        if (typingMessage) {
-            typingMessage.remove();
-        }
+        document.getElementById("typing-message")?.remove();
     }
 
 
-    // =====================================
-    // API Request
-    // =====================================
+    // ---------- API ----------
 
     async function sendMessage(content) {
+        if (!content || isWaiting) return;
 
-        if (!content || isWaiting) {
-            return;
-        }
-
-        isWaiting = true;
-
-        sendButton.disabled = true;
-        messageInput.disabled = true;
-
+        setBusy(true);
+        startChatMode();
         addUserMessage(content);
 
         messageInput.value = "";
-
         updateCharacterCount();
-
-        messageInput.style.height = "auto";
-
+        resizeInput();
         showTypingIndicator();
 
         try {
-
-            // Give the browser time to display the typing indicator
-            await new Promise(resolve => setTimeout(resolve, 300));
-
-
             const response = await fetch("/api/chat", {
-
                 method: "POST",
-
-                headers: {
-                    "Content-Type": "application/json"
-                },
-
-                body: JSON.stringify({
-                    message: content
-                })
-
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ message: content })
             });
-
 
             const data = await response.json();
 
             if (!response.ok) {
-
-                throw new Error(
-                    data.detail || "The server returned an error."
-                );
+                throw new Error(typeof data.detail === "string" ? data.detail : "The server returned an error.");
             }
 
+            removeTypingIndicator();
             addAssistantMessage(data);
 
-
         } catch (error) {
-
             console.error("AWN AI request failed:", error);
-
-            addAssistantMessage({
-
-                response:
-                    "I'm sorry, something went wrong while processing your message."
-
-            });
+            removeTypingIndicator();
+            addAssistantMessage({ response: "Sorry, something went wrong while processing your message. Please try again." });
 
         } finally {
-
-            removeTypingIndicator();
-
-            isWaiting = false;
-
-            sendButton.disabled = false;
-            messageInput.disabled = false;
-
+            setBusy(false);
             messageInput.focus();
         }
     }
 
+    async function checkHealth() {
+        try {
+            const response = await fetch("/health");
+            if (!response.ok) throw new Error("unhealthy");
+            statusBox.dataset.state = "ok";
+            statusText.textContent = "Assistant online";
+        } catch {
+            statusBox.dataset.state = "down";
+            statusText.textContent = "Assistant offline";
+        }
+    }
 
-    // =====================================
-    // Form Submission
-    // =====================================
+
+    // ---------- Events ----------
 
     chatForm.addEventListener("submit", (event) => {
-
         event.preventDefault();
-
-        const content = messageInput.value.trim();
-
-        if (!content || isWaiting) {
-            return;
-        }
-
-        sendMessage(content);
+        sendMessage(messageInput.value.trim());
     });
-
-
-    // =====================================
-    // Character Counter
-    // =====================================
 
     messageInput.addEventListener("input", () => {
-
         updateCharacterCount();
-
-        messageInput.style.height = "auto";
-
-        messageInput.style.height =
-            Math.min(messageInput.scrollHeight, 110) + "px";
+        resizeInput();
     });
 
-
-    // =====================================
-    // Keyboard Shortcuts
-    // =====================================
-
     messageInput.addEventListener("keydown", (event) => {
-
-        if (
-            event.key === "Enter" &&
-            !event.shiftKey &&
-            !event.isComposing
-        ) {
-
+        if (event.key === "Enter" && !event.shiftKey && !event.isComposing) {
             event.preventDefault();
-
             chatForm.requestSubmit();
         }
     });
 
-
-    // =====================================
-    // Quick Actions — Event Delegation
-    // =====================================
-
-    messagesContainer.addEventListener("click", (event) => {
-
-        const button = event.target.closest(".suggestion-item");
-
-        if (!button || isWaiting) {
-            return;
-        }
-
-        const prompt = button.dataset.prompt;
-
-        if (!prompt) {
-            return;
-        }
-
-        messageInput.value = prompt;
-
-        updateCharacterCount();
-
-        chatForm.requestSubmit();
+    // Quick chips and topic cards send their prompt directly
+    document.addEventListener("click", (event) => {
+        const button = event.target.closest("[data-prompt]");
+        if (!button || isWaiting) return;
+        sendMessage(button.dataset.prompt);
     });
 
+    // Header navigation: leave the conversation first, then go to the section
+    const navLinks = document.querySelectorAll(".site-nav a");
 
-    // =====================================
-    // New Conversation
-    // =====================================
+    navLinks.forEach((link) => {
+        link.addEventListener("click", (event) => {
+            if (isWaiting) {
+                event.preventDefault();
+                return;
+            }
+
+            event.preventDefault();
+
+            if (document.body.classList.contains("is-chatting")) {
+                endChatMode();
+            }
+
+            const target = document.querySelector(link.getAttribute("href"));
+            // Wait one frame so the landing sections are visible before scrolling
+            requestAnimationFrame(() => {
+                target?.scrollIntoView({ behavior: "smooth", block: "start" });
+            });
+
+            navLinks.forEach((item) => item.classList.toggle("is-current", item === link));
+        });
+    });
 
     newChatButton.addEventListener("click", () => {
-
-        if (isWaiting) {
-            return;
-        }
-
-        showWelcome();
-
+        if (isWaiting) return;
+        endChatMode();
         messageInput.value = "";
-
         updateCharacterCount();
-
-        messageInput.style.height = "auto";
-
+        resizeInput();
+        window.scrollTo({ top: 0 });
         messageInput.focus();
-
-        scrollToBottom();
     });
 
-
-    // =====================================
-    // Initialization
-    // =====================================
+    document.querySelector(".brand")?.addEventListener("click", (event) => {
+        event.preventDefault();
+        if (isWaiting) return;
+        endChatMode();
+        window.scrollTo({ top: 0, behavior: "smooth" });
+    });
 
     updateCharacterCount();
-
-    console.log(
-        "AWN AI interface initialized successfully."
-    );
-
+    checkHealth();
 });

@@ -1,88 +1,130 @@
-# AWN AI | عَون
+# AWN AI (عَون)
 
 ### ذكاء يفهم طلبك، ويوصلك للحل.
 
-AWN AI is an AI-powered customer support intelligence system designed to understand incoming customer messages, detect their scope, identify relevant categories and intents, and retrieve useful information from a structured knowledge base.
+AWN AI (عَون) is an educational portfolio project for customer-support intelligence. It classifies an incoming message, decides whether that message is in scope, and retrieves passages from a static knowledge base for a fictional store.
 
-The project demonstrates an end-to-end machine learning workflow, combining data analysis, text classification, hybrid information retrieval, API development, and an interactive web interface.
+The running application does not place orders, process payments, or generate replies with a connected language model.
+
+---
+
+## Screenshots
+
+### Homepage
+
+![AWN AI homepage](docs/screenshots/homepage.png)
+
+### Chat response
+
+![AWN AI chat response](docs/screenshots/chat-response.png)
 
 ---
 
 ## Project Overview
 
-Customer support systems receive messages that may be relevant, unrelated, or unclear. AWN AI introduces an intelligent processing pipeline that evaluates incoming messages before attempting to retrieve relevant information.
+Customer messages may be relevant to the store, unrelated, or too unclear to answer. AWN AI checks scope before it searches the knowledge base.
 
-### Key Features
+### What the application does
 
-- **Scope Detection:** Classifies messages into three categories:
-  - `IN_SCOPE`
-  - `OUT_OF_SCOPE`
-  - `UNCLEAR_SCOPE`
-- **Category & Intent Classification:** Identifies the relevant customer-service category and intent for supported messages.
-- **Hybrid Information Retrieval:** Combines original-query similarity with intent-enriched similarity.
-- **REST API:** Provides endpoints for health checks and customer message processing.
-- **Interactive Web Interface:** Supports message submission, conversation controls, and response status indicators.
-- **Source Transparency:** Returns retrieved knowledge excerpts with supporting source references.
+- **Scope detection** labels a message as `IN_SCOPE`, `OUT_OF_SCOPE`, or `UNCLEAR_SCOPE`.
+- **Category and intent classification** run only after a message is labeled `IN_SCOPE`. They are separate models from scope detection.
+- **Hybrid retrieval** ranks knowledge-base chunks with a weighted mix of the original query and an intent-enriched query.
+- **REST API** serves the web interface, a health check, and message processing.
+- **Web interface** accepts a message, starts a new conversation, and shows a typing indicator while a request is in progress.
+- **Source excerpts** are returned with the retrieved chunks for in-scope messages.
 
 ---
 
 ## System Workflow
 
-1. A customer submits a message through the web interface.
-2. The API receives and processes the message.
-3. The scope detection model determines whether the message is supported, unsupported, or unclear.
-4. Supported messages proceed to category and intent classification.
-5. The retrieval component searches the knowledge base using hybrid retrieval.
-6. The API returns the relevant information and source references.
-7. Unsupported or unclear messages receive predefined responses.
+1. A message is submitted through the web interface.
+2. `POST /api/chat` receives the message.
+3. Scope Detection V3 assigns `IN_SCOPE`, `OUT_OF_SCOPE`, or `UNCLEAR_SCOPE`.
+4. `OUT_OF_SCOPE` and `UNCLEAR_SCOPE` stop there and return a predefined response. Category, intent, and retrieval are not used.
+5. An `IN_SCOPE` message is passed to the category model and then the intent model.
+6. Hybrid retrieval searches the knowledge base with the original message and the predicted intent, and keeps up to three chunks with a positive score.
+7. The API response quotes the top retrieved chunk, or a predefined fallback when nothing is retrieved. The matching chunks are returned as sources.
+
+`src/pipeline.py` and `src/response_generator.py` can accept a callable for language-model generation. That path is not connected to the API.
 
 ---
 
 ## Scope Detection V3
 
-The latest scope detection model was developed using a manually authored synthetic dataset.
+Scope Detection V3 is the main model evaluation in this project. It is a scope task only. It does not predict category or intent.
 
-### Dataset Summary
+The dataset is manually authored and synthetic: `data/processed/scope_detection_v3.csv`.
 
 | Property | Value |
 |---|---:|
 | Total messages | 600 |
-| Scope classes | 3 |
+| Scope classes | 3, balanced |
 | Messages per class | 200 |
 | Writing styles | 5 |
 | Message patterns | 15 |
 | Dataset quality checks | 15/15 passed |
 
-### Model Comparison
+Classes:
 
-Two machine learning configurations were evaluated using five-fold `StratifiedGroupKFold`, grouped by message pattern.
+- `IN_SCOPE`
+- `OUT_OF_SCOPE`
+- `UNCLEAR_SCOPE`
 
-| Model | Mean Fold Macro F1 |
+### Evaluation
+
+Both candidate models used the same **5-fold `StratifiedGroupKFold`**, grouped by `pattern`, so the same pattern does not appear in both the training and evaluation portions of a fold. Each fold trains on 480 messages and evaluates on 120.
+
+Mean fold Macro F1 was the selection metric. The figure below is the mean of the five fold scores. It is not an out-of-fold aggregate.
+
+| Model | Mean fold Macro F1 |
 |---|---:|
 | V1: Word TF-IDF + Logistic Regression | 0.804 |
 | V2: Word + Character TF-IDF + LinearSVC | **0.853** |
 
-V2 outperformed V1 in all five validation folds and was selected as the final model.
+V2 scored higher in all five folds and was saved as `models/scope_detection_v3.joblib`. The artifact was then trained on all 600 messages. Scores from that full-data fit are not an independent evaluation.
 
-### V2 Class Performance
+Recorded fold means before rounding are 0.803732 (V1) and 0.852994 (V2).
 
-| Class | F1 Score |
+### V2 class scores from that evaluation
+
+| Class | F1 |
 |---|---:|
 | IN_SCOPE | 0.824 |
 | OUT_OF_SCOPE | 0.905 |
 | UNCLEAR_SCOPE | 0.835 |
 
-**Evaluation Notes:**
-- The reported Macro F1 is the mean of five validation-fold scores, not an out-of-fold aggregate.
-- The final model was trained using all 600 dataset messages.
-- LinearSVC decision margins are not probability estimates.
-- The synthetic benchmark does not guarantee production performance.
+Reported IN_SCOPE recall for this evaluation is 0.770. LinearSVC margins are not probabilities. These scores describe the synthetic grouped cross-validation. They are not a production-performance claim.
 
 ---
 
-## Information Retrieval Evaluation
+## Category and Intent Classification
 
-The hybrid retrieval component was evaluated using 22 authored queries.
+Category and intent are separate from Scope Detection V3. They run only when scope is `IN_SCOPE`. Otherwise both values are `None`.
+
+| Task | Artifact | Role |
+|---|---|---|
+| Category | `models/lumora_model_v2.joblib` | Loaded by `src/predictor.py` |
+| Intent | `models/lumora_intent_model_v2.joblib` | Loaded by `src/intelligence.py` |
+
+Both selected artifacts use character TF-IDF with LinearSVC. The earlier customer-message file, `data/raw/customer_support_tickets.csv`, has 11 categories and 27 intents. Those label sets are not the three scope classes, and this README does not treat their earlier accuracy figures as the project result.
+
+---
+
+## Hybrid Knowledge Retrieval
+
+Retrieval is a separate component from scope detection. For an in-scope message, `src/retriever.py`:
+
+1. Builds one TF-IDF matrix over the knowledge chunks (word unigrams and bigrams, cosine similarity).
+2. Scores each chunk against the original message.
+3. Scores each chunk again against the message plus fixed search terms for the predicted intent, when that intent is known.
+4. Combines the scores as **75% original-query similarity** and **25% intent-enriched similarity**.
+5. Returns up to three chunks whose combined score is greater than zero.
+
+The chat API asks for `top_k=3` and uses the first returned chunk as the reply text.
+
+### Retrieval benchmark
+
+This benchmark is not the Scope Detection V3 result. It uses 22 authored queries.
 
 | Metric | Result |
 |---|---:|
@@ -90,7 +132,17 @@ The hybrid retrieval component was evaluated using 22 authored queries.
 | Recall@3 | 100% |
 | Mean Reciprocal Rank (MRR) | 90.91% |
 
-All 22 relevant documents appeared within the top three retrieved results.
+On that query set, 18 of 22 expected chunks were at rank 1. The other four were at rank 2, so every expected chunk appeared in the top three. These figures describe that authored set only.
+
+---
+
+## Knowledge Base
+
+The knowledge base is `docs/knowledge_base.md`. The loader splits it into **22 chunks** for **Lumora Demo Store**, a fictional demonstration store.
+
+The chunks cover store overview, orders, shipping and delivery, refunds and returns, payments, customer accounts, newsletter subscriptions, customer support, and assistant guidelines.
+
+Policies in those chunks are demonstration text. They are not live store commitments, and the application cannot look up a real order, payment, or refund.
 
 ---
 
@@ -98,22 +150,25 @@ All 22 relevant documents appeared within the top three retrieved results.
 
 | Area | Technologies |
 |---|---|
-| Programming Language | Python |
-| Data Analysis | pandas, NumPy |
-| Machine Learning | scikit-learn |
-| Model Persistence | joblib |
+| Programming language | Python 3.12 |
+| Data analysis | pandas, NumPy |
+| Machine learning | scikit-learn |
+| Model persistence | joblib |
 | Backend API | FastAPI |
-| ASGI Server | Uvicorn |
+| ASGI server | Uvicorn |
 | Frontend | HTML, CSS, JavaScript |
 | Testing | pytest |
-| Development | JupyterLab |
+| Notebooks | JupyterLab |
+
+Versions are pinned in `requirements.txt`.
 
 ---
 
 ## Project Structure
 
+The product name is AWN AI (عَون). Some local paths and model filenames still use the earlier Lumora name.
+
 ```text
-AWN-AI/
 ├── data/
 │   ├── raw/
 │   ├── processed/
@@ -124,9 +179,13 @@ AWN-AI/
 │   ├── knowledge_base.md
 │   ├── annotation_guidelines.md
 │   ├── benchmark_specification.md
-│   └── benchmark_release_manifest.txt
+│   ├── benchmark_release_manifest.txt
+│   └── screenshots/
+│       ├── homepage.png
+│       └── chat-response.png
 ├── models/
 │   ├── scope_detection_v3.joblib
+│   ├── lumora_model_v2.joblib
 │   └── lumora_intent_model_v2.joblib
 ├── notebooks/
 ├── src/
@@ -146,6 +205,8 @@ AWN-AI/
 └── README.md
 ```
 
+`models/` also contains earlier experiment artifacts. The three files above are the ones the application loads.
+
 ---
 
 ## Getting Started
@@ -156,49 +217,49 @@ AWN-AI/
 - pip
 - Git
 
-### 1. Clone the Repository
+### 1. Clone the repository
 
-```bash
-git clone <YOUR_GITHUB_REPOSITORY_URL>
-cd <YOUR_REPOSITORY_DIRECTORY>
+```text
+git clone YOUR-GITHUB-REPOSITORY-URL
+cd YOUR-REPOSITORY-DIRECTORY
 ```
 
-### 2. Create a Virtual Environment
+### 2. Create a virtual environment
 
-```bash
+```text
 python3 -m venv .venv
 ```
 
-### 3. Activate the Environment
+### 3. Activate the environment
 
 **macOS / Linux**
 
-```bash
+```text
 source .venv/bin/activate
 ```
 
 **Windows**
 
-```bash
+```text
 .venv\Scripts\activate
 ```
 
-### 4. Install Dependencies
+### 4. Install dependencies
 
-```bash
+```text
 python -m pip install --upgrade pip
 pip install -r requirements.txt
 ```
 
-### 5. Run the Application
+### 5. Run the application
 
-From the project root directory:
+From the project root:
 
-```bash
+```text
 uvicorn src.api:app --reload
 ```
 
-Open your browser:
+Open:
 
 ```text
 http://127.0.0.1:8000
@@ -211,80 +272,53 @@ http://127.0.0.1:8000
 | Endpoint | Method | Description |
 |---|---|---|
 | `/` | GET | Serves the web interface |
-| `/health` | GET | Checks API health |
-| `/api/chat` | POST | Processes customer messages |
+| `/static` | GET | Serves static assets |
+| `/health` | GET | Returns `{"status": "healthy"}` |
+| `/api/chat` | POST | Processes one customer message |
+
+`POST /api/chat` expects JSON `{"message": "..."}` (1–2000 characters). The response includes `scope`, `category`, `intent`, `response`, and `sources`.
 
 ---
 
 ## Running Tests
 
-Execute the test suite from the project root:
+From the project root:
 
-```bash
+```text
 pytest -q
 ```
 
-The previously completed test run reported **49 passing tests**.
+The suite currently defines **49 tests** across the API, scope and intent analysis, category predictor, retriever, pipeline, and response-generator modules. A previously recorded run reported **49 passing tests**. This README does not add a new test result.
 
 ---
 
-## Knowledge Base
+## Limitations
 
-AWN AI currently uses a fictional demonstration store named **Lumora Demo Store**.
-
-The knowledge base covers:
-
-- Store information
-- Orders
-- Shipping and delivery
-- Refunds and returns
-- Payments
-- Customer accounts
-- Subscriptions
-- Customer support policies
-
-The store is used exclusively as a demonstration knowledge source.
-
----
-
-## Current Limitations
-
-- The knowledge base represents a fictional demonstration store.
-- No live order-management or payment-system integration is available.
-- The system cannot retrieve actual order status or execute refunds.
-- The current API does not use an integrated LLM provider or configured LLM API key.
-- Responses rely on retrieved knowledge and predefined scope responses.
-- The current response content is in English.
-- The scope detection dataset is synthetic and requires evaluation on representative real-world customer messages before production deployment.
+- AWN AI (عَون) is an educational portfolio project, not a production support service.
+- No live order or payment integration is connected. The system cannot confirm order status, cancel an order, or execute a refund.
+- No LLM-based response generation is currently connected. The chat API returns a retrieved knowledge excerpt or a predefined scope or fallback response.
+- The knowledge base is 22 static chunks for the fictional Lumora Demo Store.
+- Retrieved excerpts and predefined replies are in English.
+- Scope Detection V3 was measured on synthetic messages with grouped cross-validation. That result does not establish performance on real customer traffic.
+- Category and intent checks used datasets with known exposure limits. They are not reported here as the main evaluation.
 
 ---
 
 ## Documentation
 
-Detailed technical documentation is available in the `docs/` directory, including:
-
-- Project state and implementation progress.
-- Development work log.
-- Knowledge base documentation.
-- Annotation guidelines.
-- Scope Detection V3 benchmark specification.
-- Benchmark release manifests.
+Further notes in `docs/` include project state, the work log, the knowledge base, annotation guidelines, the Scope Detection V3 benchmark specification, and benchmark release manifests.
 
 ---
 
 ## Project Status
 
-The core classification, retrieval, API, and web interface components have been integrated.
-
-The project is undergoing final documentation, demonstration preparation, and release preparation.
+Classification, hybrid retrieval, the API, and the web interface are integrated for local demonstration. Remaining work is documentation and demonstration preparation. No deployed public URL is part of this project.
 
 ---
 
 ## Disclaimer
 
-AWN AI is an educational and portfolio project developed to demonstrate applied machine learning, data processing, text classification, information retrieval, and API development. It is not a production-ready customer support platform.
+AWN AI (عَون) demonstrates applied text classification, information retrieval, and a small web API. It is not a production customer-support platform.
 
----
-
-**AWN AI — عَون**  
+**AWN AI (عَون)**  
 *ذكاء يفهم طلبك، ويوصلك للحل.*
