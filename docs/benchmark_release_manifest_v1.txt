@@ -1,0 +1,24 @@
+LUMORA — BENCHMARK RELEASE MANIFEST
+Release: v1.0
+Created: 2026-11-10T11:09:00.577091+03:00
+Guideline version: 1.3
+
+File: data/benchmark/development.csv
+Rows: 27
+Columns: 11
+SHA-256: 3a2bd2033ee3df53a661b122016db823f6a5505b47626ca7b3d118f9fe6bc2e8
+
+File: data/benchmark/locked_test.csv
+Rows: 108
+Columns: 11
+SHA-256: f9729de492a1eb165313cb201bbdc0b167f42dd28ba1cc3a266ca102c4e6b98d
+
+File: data/benchmark/challenge.csv
+Rows: 22
+Columns: 11
+SHA-256: 25d499a07760aaa066273a74b22456c4808b6974b4a3dda25ff90e51d02f6b93
+
+TOTAL EXAMPLES: 157
+FINAL BENCHMARK AUDIT: 21/21 PASS
+
+Note: Any future file modification changes its SHA-256 hash.

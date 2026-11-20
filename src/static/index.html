@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="theme-color" content="#f8f9f6">
+    <meta name="description"
+        content="AWN AI — Intelligent customer support that understands requests and retrieves relevant information.">
+
+    <title>AWN AI | Customer Support Intelligence</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+
+<body>
+
+    <div class="app-shell">
+
+        <!-- Sidebar -->
+        <aside class="sidebar">
+
+            <div class="sidebar-top">
+
+                <a href="/" class="brand">
+                    <div class="brand-symbol">
+                        <svg viewBox="0 0 48 48" fill="none">
+                            <path d="M24 39C12 32 10 18 24 7C38 18 36 32 24 39Z"
+                                stroke="currentColor" stroke-width="2.5" />
+                            <path d="M24 39V17M24 28C18 25 15 21 14 17M24 28C30 25 33 21 34 17"
+                                stroke="currentColor" stroke-width="2.5"
+                                stroke-linecap="round" />
+                        </svg>
+                    </div>
+
+                    <div class="brand-text">
+                        <strong>AWN AI</strong>
+                        <span>Support intelligence</span>
+                    </div>
+                </a>
+
+                <button
+                    class="new-chat-button"
+                    id="new-chat-button"
+                    type="button">
+
+                    <span class="new-chat-icon">＋</span>
+                    <span>New conversation</span>
+
+                </button>
+
+            </div>
+
+        </aside>
+
+
+        <!-- Main Application -->
+        <main class="main-content">
+
+            <!-- Top Navigation -->
+            <header class="topbar">
+
+                <div class="breadcrumb">
+                    <span>Workspace</span>
+                    <span class="breadcrumb-divider">/</span>
+                    <strong>Assistant</strong>
+                </div>
+
+                <div class="topbar-right">
+
+                    <div class="connection-status">
+                        <span class="status-dot"></span>
+                        <span>System ready</span>
+                    </div>
+
+                    <span class="topbar-divider"></span>
+
+                    <div class="topbar-version">
+                        AWN AI <span>·</span> v1.0
+                    </div>
+
+                </div>
+
+            </header>
+
+
+            <!-- Main Content -->
+            <div class="content-container">
+
+
+                <!-- Assistant Introduction -->
+                <section class="intro-section">
+
+                    <div class="intro-heading">
+                        <div>
+                            <span class="section-eyebrow">MEET YOUR ASSISTANT</span>
+
+                            <h1>
+                                Support that understands
+                                <span>your needs.</span>
+                            </h1>
+
+                            <p>
+                                AWN analyzes your request, identifies its intent,
+                                and retrieves relevant information from its knowledge base.
+                            </p>
+                        </div>
+                    </div>
+
+
+                    <!-- Information Cards -->
+                    <div class="intro-grid">
+
+
+                        <!-- Capabilities -->
+                        <div class="intro-card capabilities-card">
+
+                            <div class="card-heading">
+                                What I can help with
+                            </div>
+
+                            <div class="capability-list">
+
+                                <div class="capability-item">
+                                    <span class="capability-icon">↗</span>
+                                    <span>Order information</span>
+                                </div>
+
+                                <div class="capability-item">
+                                    <span class="capability-icon">↩</span>
+                                    <span>Refund guidance</span>
+                                </div>
+
+                                <div class="capability-item">
+                                    <span class="capability-icon">◇</span>
+                                    <span>Payment information</span>
+                                </div>
+
+                                <div class="capability-item">
+                                    <span class="capability-icon">⌑</span>
+                                    <span>Account assistance</span>
+                                </div>
+
+                            </div>
+
+                        </div>
+
+
+                        <!-- How It Works -->
+                        <div class="intro-card process-card">
+
+                            <div class="card-heading">
+                                How it works
+                            </div>
+
+                            <div class="process-list">
+
+                                <div class="process-step">
+                                    <span class="process-number">01</span>
+
+                                    <div>
+                                        <strong>Understand</strong>
+                                        <p>Your message is analyzed.</p>
+                                    </div>
+                                </div>
+
+                                <div class="process-step">
+                                    <span class="process-number">02</span>
+
+                                    <div>
+                                        <strong>Identify</strong>
+                                        <p>Your request intent is classified.</p>
+                                    </div>
+                                </div>
+
+                                <div class="process-step">
+                                    <span class="process-number">03</span>
+
+                                    <div>
+                                        <strong>Retrieve</strong>
+                                        <p>Relevant knowledge is retrieved.</p>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- Transparency Notice -->
+                    <div class="transparency-card">
+
+                        <span class="transparency-icon">ⓘ</span>
+
+                        <div>
+                            <strong>A transparent assistant</strong>
+
+                            <p>
+                                Responses use available knowledge.
+                                Live order management and payment processing are not connected.
+                            </p>
+                        </div>
+
+                    </div>
+
+                </section>
+
+
+                <!-- Chat Workspace -->
+                <section class="chat-workspace">
+
+                    <div class="chat-panel">
+
+                        <!-- Chat Header -->
+                        <div class="chat-header">
+
+                            <div class="chat-identity">
+
+                                <div class="assistant-avatar">
+                                    <span>A</span>
+                                    <span class="avatar-status"></span>
+                                </div>
+
+                                <div class="assistant-info">
+                                    <h2>AWN Assistant</h2>
+                                    <span>Customer Support Intelligence</span>
+                                </div>
+
+                            </div>
+
+                            <div class="chat-header-actions">
+
+                                <div class="assistant-mode">
+                                    <span class="mode-icon">✳</span>
+                                    <span>Knowledge assistant</span>
+                                </div>
+
+                            </div>
+
+                        </div>
+
+
+                        <!-- Messages -->
+                        <div
+                            class="messages-area"
+                            id="messages"
+                            aria-live="polite">
+
+                            <!-- Welcome State -->
+                            <div class="empty-chat" id="empty-chat">
+
+                                <div class="welcome-content">
+
+                                    <div class="welcome-orb">
+                                        <div class="orb-inner">
+                                            <svg viewBox="0 0 48 48" fill="none">
+                                                <path
+                                                    d="M24 39C12 32 10 18 24 7C38 18 36 32 24 39Z"
+                                                    stroke="currentColor"
+                                                    stroke-width="2.2" />
+
+                                                <path
+                                                    d="M24 39V17M24 28C18 25 15 21 14 17M24 28C30 25 33 21 34 17"
+                                                    stroke="currentColor"
+                                                    stroke-width="2.2"
+                                                    stroke-linecap="round" />
+                                            </svg>
+                                        </div>
+                                    </div>
+
+                                    <span class="welcome-eyebrow">
+                                        AWN AI ASSISTANT
+                                    </span>
+
+                                    <h2>
+                                        How can I help
+                                        <span>you today?</span>
+                                    </h2>
+
+                                    <p>
+                                        Start a conversation by asking about orders,
+                                        refunds, payments, or your account.
+                                    </p>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+
+                        <!-- Message Composer -->
+                        <div class="composer-area">
+
+                            <form class="chat-composer" id="chat-form">
+
+                                <div class="composer-inner">
+
+                                    <textarea
+                                        id="message-input"
+                                        name="message"
+                                        placeholder="Message AWN Assistant..."
+                                        rows="1"
+                                        maxlength="2000"
+                                        aria-label="Type your message"></textarea>
+
+                                    <button
+                                        type="submit"
+                                        class="send-button"
+                                        id="send-button"
+                                        aria-label="Send message">
+
+                                        <svg viewBox="0 0 24 24" fill="none">
+                                            <path
+                                                d="M12 19V5M5 12L12 5L19 12"
+                                                stroke="currentColor"
+                                                stroke-width="2"
+                                                stroke-linecap="round"
+                                                stroke-linejoin="round" />
+                                        </svg>
+
+                                    </button>
+
+                                </div>
+
+                                <div class="composer-footer">
+
+                                    <span class="composer-hint">
+                                        <span class="keyboard-hint">↵</span>
+                                        Press Enter to send
+                                        <span class="hint-separator">·</span>
+                                        Shift + Enter for a new line
+                                    </span>
+
+                                    <span id="character-count">0 / 2000</span>
+
+                                </div>
+
+                            </form>
+
+                            <div class="composer-disclaimer">
+                                AWN AI provides responses based on its available knowledge base.
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </section>
+
+
+                <!-- Footer -->
+                <footer class="page-footer">
+
+                    <span>© 2026 AWN AI</span>
+
+                    <span class="footer-separator">·</span>
+
+                    <span>Intelligent support. Clearer answers.</span>
+
+                </footer>
+
+            </div>
+
+        </main>
+
+    </div>
+
+
+    <script src="/static/app.js"></script>
+
+</body>
+
+</html>

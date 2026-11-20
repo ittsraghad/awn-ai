@@ -1,0 +1,601 @@
+message,writing_style,scope,pattern
+How can I track my package after it has been shipped?,QUESTION,IN_SCOPE,ORDERS_DELIVERY
+Where can I find the tracking number for my order?,QUESTION,IN_SCOPE,ORDERS_DELIVERY
+When should I expect my delivery to arrive?,QUESTION,IN_SCOPE,ORDERS_DELIVERY
+Which delivery options are available for my purchase?,QUESTION,IN_SCOPE,ORDERS_DELIVERY
+What should I do if my package has not arrived?,QUESTION,IN_SCOPE,ORDERS_DELIVERY
+Can I check whether my order has been dispatched?,QUESTION,IN_SCOPE,ORDERS_DELIVERY
+Is express delivery available for this order?,QUESTION,IN_SCOPE,ORDERS_DELIVERY
+Why has my tracking information not been updated?,QUESTION,IN_SCOPE,ORDERS_DELIVERY
+I want to know where my package is right now.,PERSONAL,IN_SCOPE,ORDERS_DELIVERY
+My order has not arrived within the estimated delivery period.,PERSONAL,IN_SCOPE,ORDERS_DELIVERY
+I cannot find the tracking number for my purchase.,PERSONAL,IN_SCOPE,ORDERS_DELIVERY
+"My package was dispatched, but I have not received it.",PERSONAL,IN_SCOPE,ORDERS_DELIVERY
+I would like to check the estimated arrival date of my order.,PERSONAL,IN_SCOPE,ORDERS_DELIVERY
+"My delivery address is correct, but the package is delayed.",PERSONAL,IN_SCOPE,ORDERS_DELIVERY
+I need information about the shipment of my recent purchase.,PERSONAL,IN_SCOPE,ORDERS_DELIVERY
+My order confirmation says it was shipped several days ago.,PERSONAL,IN_SCOPE,ORDERS_DELIVERY
+Please help me locate my shipment.,REQUEST,IN_SCOPE,ORDERS_DELIVERY
+Could you check the estimated delivery date for my order?,REQUEST,IN_SCOPE,ORDERS_DELIVERY
+Can someone provide an update about my package?,REQUEST,IN_SCOPE,ORDERS_DELIVERY
+Please explain how I can access the tracking details.,REQUEST,IN_SCOPE,ORDERS_DELIVERY
+Would you help me understand the available shipping options?,REQUEST,IN_SCOPE,ORDERS_DELIVERY
+Could you clarify why my delivery has been delayed?,REQUEST,IN_SCOPE,ORDERS_DELIVERY
+Please tell me whether my order has left the warehouse.,REQUEST,IN_SCOPE,ORDERS_DELIVERY
+Can you provide guidance on tracking a recent purchase?,REQUEST,IN_SCOPE,ORDERS_DELIVERY
+The tracking page has not shown any updates since dispatch.,DESCRIPTIVE,IN_SCOPE,ORDERS_DELIVERY
+The estimated delivery date displayed for my order has passed.,DESCRIPTIVE,IN_SCOPE,ORDERS_DELIVERY
+The package associated with my purchase has not arrived.,DESCRIPTIVE,IN_SCOPE,ORDERS_DELIVERY
+The shipment information is missing from my order details.,DESCRIPTIVE,IN_SCOPE,ORDERS_DELIVERY
+The delivery estimate appears different from the original confirmation.,DESCRIPTIVE,IN_SCOPE,ORDERS_DELIVERY
+The tracking number provided in the confirmation email is not working.,DESCRIPTIVE,IN_SCOPE,ORDERS_DELIVERY
+"The order status indicates dispatch, but the package is still missing.",DESCRIPTIVE,IN_SCOPE,ORDERS_DELIVERY
+The available shipping methods are not clear on the checkout page.,DESCRIPTIVE,IN_SCOPE,ORDERS_DELIVERY
+"Tracking details for a recently dispatched order, please.",OTHER,IN_SCOPE,ORDERS_DELIVERY
+An update on the delivery progress of my purchase.,OTHER,IN_SCOPE,ORDERS_DELIVERY
+Information about the expected arrival of my package.,OTHER,IN_SCOPE,ORDERS_DELIVERY
+Assistance with locating a shipment that has not arrived.,OTHER,IN_SCOPE,ORDERS_DELIVERY
+Delivery status and tracking information for order 58241.,OTHER,IN_SCOPE,ORDERS_DELIVERY
+Details regarding the shipping options for my purchase.,OTHER,IN_SCOPE,ORDERS_DELIVERY
+A clarification about the delay affecting my package.,OTHER,IN_SCOPE,ORDERS_DELIVERY
+"The current shipment status of my recent order, if available.",OTHER,IN_SCOPE,ORDERS_DELIVERY
+Which payment methods can I use when placing an order?,QUESTION,IN_SCOPE,PAYMENTS_BILLING
+Why was my payment declined during checkout?,QUESTION,IN_SCOPE,PAYMENTS_BILLING
+How can I get a copy of my purchase invoice?,QUESTION,IN_SCOPE,PAYMENTS_BILLING
+Where can I find the receipt for my recent purchase?,QUESTION,IN_SCOPE,PAYMENTS_BILLING
+Can I use a debit card to pay for my order?,QUESTION,IN_SCOPE,PAYMENTS_BILLING
+What should I do if the payment page shows an error?,QUESTION,IN_SCOPE,PAYMENTS_BILLING
+Are digital wallets accepted for online purchases?,QUESTION,IN_SCOPE,PAYMENTS_BILLING
+How do I know whether my payment was successful?,QUESTION,IN_SCOPE,PAYMENTS_BILLING
+My card payment was declined when I tried to place an order.,PERSONAL,IN_SCOPE,PAYMENTS_BILLING
+I cannot find the invoice for my recent purchase.,PERSONAL,IN_SCOPE,PAYMENTS_BILLING
+My checkout payment keeps failing.,PERSONAL,IN_SCOPE,PAYMENTS_BILLING
+I would like to know which payment methods are accepted.,PERSONAL,IN_SCOPE,PAYMENTS_BILLING
+My receipt was not included in the order confirmation email.,PERSONAL,IN_SCOPE,PAYMENTS_BILLING
+I am having trouble completing the payment for my purchase.,PERSONAL,IN_SCOPE,PAYMENTS_BILLING
+"My bank approved the transaction, but the store displayed an error.",PERSONAL,IN_SCOPE,PAYMENTS_BILLING
+I need another copy of the invoice for my order.,PERSONAL,IN_SCOPE,PAYMENTS_BILLING
+Please explain which payment methods your store accepts.,REQUEST,IN_SCOPE,PAYMENTS_BILLING
+Could you help me understand why my card was declined?,REQUEST,IN_SCOPE,PAYMENTS_BILLING
+Please guide me through finding my purchase invoice.,REQUEST,IN_SCOPE,PAYMENTS_BILLING
+Can you tell me how to obtain a receipt for my order?,REQUEST,IN_SCOPE,PAYMENTS_BILLING
+Would you clarify what to do when checkout displays a payment error?,REQUEST,IN_SCOPE,PAYMENTS_BILLING
+Please confirm whether digital wallets are accepted.,REQUEST,IN_SCOPE,PAYMENTS_BILLING
+Could you explain how to check if a payment went through?,REQUEST,IN_SCOPE,PAYMENTS_BILLING
+Please provide information about obtaining an invoice.,REQUEST,IN_SCOPE,PAYMENTS_BILLING
+The payment page displays an error whenever I try to check out.,DESCRIPTIVE,IN_SCOPE,PAYMENTS_BILLING
+The invoice for my recent purchase is not visible in my account.,DESCRIPTIVE,IN_SCOPE,PAYMENTS_BILLING
+The card transaction was declined during the checkout process.,DESCRIPTIVE,IN_SCOPE,PAYMENTS_BILLING
+The available payment methods are not clearly listed on the store website.,DESCRIPTIVE,IN_SCOPE,PAYMENTS_BILLING
+The order confirmation email does not contain the receipt I expected.,DESCRIPTIVE,IN_SCOPE,PAYMENTS_BILLING
+The checkout process stops before the payment can be completed.,DESCRIPTIVE,IN_SCOPE,PAYMENTS_BILLING
+The bank notification and the store payment message show different results.,DESCRIPTIVE,IN_SCOPE,PAYMENTS_BILLING
+The purchase invoice is needed for my personal records.,DESCRIPTIVE,IN_SCOPE,PAYMENTS_BILLING
+"Accepted payment options for online orders, please.",OTHER,IN_SCOPE,PAYMENTS_BILLING
+A copy of the invoice associated with my purchase.,OTHER,IN_SCOPE,PAYMENTS_BILLING
+Payment failure during checkout and possible reasons.,OTHER,IN_SCOPE,PAYMENTS_BILLING
+Information about debit cards and digital wallet payments.,OTHER,IN_SCOPE,PAYMENTS_BILLING
+Another receipt for a recently completed purchase.,OTHER,IN_SCOPE,PAYMENTS_BILLING
+Assistance with an unsuccessful card transaction.,OTHER,IN_SCOPE,PAYMENTS_BILLING
+Details on how to identify a successful payment.,OTHER,IN_SCOPE,PAYMENTS_BILLING
+"The invoice and receipt for order 58241, if available.",OTHER,IN_SCOPE,PAYMENTS_BILLING
+What is the return period for an item I purchased?,QUESTION,IN_SCOPE,RETURNS_REFUNDS
+Can I return a product if I have already opened its packaging?,QUESTION,IN_SCOPE,RETURNS_REFUNDS
+How long does a refund take after a return is approved?,QUESTION,IN_SCOPE,RETURNS_REFUNDS
+Which items are excluded from the store's return policy?,QUESTION,IN_SCOPE,RETURNS_REFUNDS
+Where should I submit a request to return my purchase?,QUESTION,IN_SCOPE,RETURNS_REFUNDS
+What happens if a returned product does not pass inspection?,QUESTION,IN_SCOPE,RETURNS_REFUNDS
+How can I check the status of my refund request?,QUESTION,IN_SCOPE,RETURNS_REFUNDS
+Will my refund be sent back to the original payment method?,QUESTION,IN_SCOPE,RETURNS_REFUNDS
+I want to return an item that I purchased last week.,PERSONAL,IN_SCOPE,RETURNS_REFUNDS
+"My refund was approved, but the money has not appeared in my account.",PERSONAL,IN_SCOPE,RETURNS_REFUNDS
+I received a product that I would like to return.,PERSONAL,IN_SCOPE,RETURNS_REFUNDS
+My return request was submitted several days ago.,PERSONAL,IN_SCOPE,RETURNS_REFUNDS
+I am unsure whether my purchase is eligible for a refund.,PERSONAL,IN_SCOPE,RETURNS_REFUNDS
+My returned item has not received an approval update.,PERSONAL,IN_SCOPE,RETURNS_REFUNDS
+I would like to know when my approved refund will be processed.,PERSONAL,IN_SCOPE,RETURNS_REFUNDS
+I still have the original packaging for the item I want to return.,PERSONAL,IN_SCOPE,RETURNS_REFUNDS
+Please explain the conditions for returning a purchased item.,REQUEST,IN_SCOPE,RETURNS_REFUNDS
+Could you clarify how to submit a return request?,REQUEST,IN_SCOPE,RETURNS_REFUNDS
+Please tell me how long an approved refund usually takes.,REQUEST,IN_SCOPE,RETURNS_REFUNDS
+Can you explain which products cannot be returned?,REQUEST,IN_SCOPE,RETURNS_REFUNDS
+Would you help me understand the refund approval process?,REQUEST,IN_SCOPE,RETURNS_REFUNDS
+Please provide information about the original payment method refund.,REQUEST,IN_SCOPE,RETURNS_REFUNDS
+Could you explain what happens after my returned item is inspected?,REQUEST,IN_SCOPE,RETURNS_REFUNDS
+Please guide me on where to ask about a delayed refund.,REQUEST,IN_SCOPE,RETURNS_REFUNDS
+The return request was submitted within the stated return period.,DESCRIPTIVE,IN_SCOPE,RETURNS_REFUNDS
+"The refund has been approved, but the payment has not appeared yet.",DESCRIPTIVE,IN_SCOPE,RETURNS_REFUNDS
+The product is unused and still has its original packaging.,DESCRIPTIVE,IN_SCOPE,RETURNS_REFUNDS
+The return policy lists certain product categories as restricted.,DESCRIPTIVE,IN_SCOPE,RETURNS_REFUNDS
+The refund processing period begins after the return is approved.,DESCRIPTIVE,IN_SCOPE,RETURNS_REFUNDS
+The returned item is still awaiting inspection and approval.,DESCRIPTIVE,IN_SCOPE,RETURNS_REFUNDS
+The original payment method is no longer available to me.,DESCRIPTIVE,IN_SCOPE,RETURNS_REFUNDS
+The refund status is not included in the information currently available.,DESCRIPTIVE,IN_SCOPE,RETURNS_REFUNDS
+Return eligibility for a recently purchased product.,OTHER,IN_SCOPE,RETURNS_REFUNDS
+An update about the processing time for an approved refund.,OTHER,IN_SCOPE,RETURNS_REFUNDS
+Information on products excluded from the return policy.,OTHER,IN_SCOPE,RETURNS_REFUNDS
+The procedure for submitting a product return request.,OTHER,IN_SCOPE,RETURNS_REFUNDS
+A question about refund approval after item inspection.,OTHER,IN_SCOPE,RETURNS_REFUNDS
+Details about receiving a refund through the original payment method.,OTHER,IN_SCOPE,RETURNS_REFUNDS
+Assistance with a return request submitted earlier.,OTHER,IN_SCOPE,RETURNS_REFUNDS
+The expected processing period for a returned purchase.,OTHER,IN_SCOPE,RETURNS_REFUNDS
+How can I reset the password for my store account?,QUESTION,IN_SCOPE,ACCOUNTS_CUSTOMER_SUPPORT
+What should I do if I cannot log in to my account?,QUESTION,IN_SCOPE,ACCOUNTS_CUSTOMER_SUPPORT
+Can I update the email address linked to my account?,QUESTION,IN_SCOPE,ACCOUNTS_CUSTOMER_SUPPORT
+How do I change the personal details in my account?,QUESTION,IN_SCOPE,ACCOUNTS_CUSTOMER_SUPPORT
+Where can I find help with account registration?,QUESTION,IN_SCOPE,ACCOUNTS_CUSTOMER_SUPPORT
+What happens if I enter the wrong password several times?,QUESTION,IN_SCOPE,ACCOUNTS_CUSTOMER_SUPPORT
+How can I contact customer support about an account issue?,QUESTION,IN_SCOPE,ACCOUNTS_CUSTOMER_SUPPORT
+Is it possible to delete an account I no longer use?,QUESTION,IN_SCOPE,ACCOUNTS_CUSTOMER_SUPPORT
+I cannot access my store account because my password is not working.,PERSONAL,IN_SCOPE,ACCOUNTS_CUSTOMER_SUPPORT
+My account email address needs to be updated.,PERSONAL,IN_SCOPE,ACCOUNTS_CUSTOMER_SUPPORT
+I have been unable to complete the account registration process.,PERSONAL,IN_SCOPE,ACCOUNTS_CUSTOMER_SUPPORT
+"I entered my account details, but the login attempt was unsuccessful.",PERSONAL,IN_SCOPE,ACCOUNTS_CUSTOMER_SUPPORT
+I want to remove an account that I no longer need.,PERSONAL,IN_SCOPE,ACCOUNTS_CUSTOMER_SUPPORT
+My personal information in the account is no longer correct.,PERSONAL,IN_SCOPE,ACCOUNTS_CUSTOMER_SUPPORT
+I am having trouble recovering access to my account.,PERSONAL,IN_SCOPE,ACCOUNTS_CUSTOMER_SUPPORT
+I need assistance with an issue affecting my store account.,PERSONAL,IN_SCOPE,ACCOUNTS_CUSTOMER_SUPPORT
+Please explain how I can recover access to my account.,REQUEST,IN_SCOPE,ACCOUNTS_CUSTOMER_SUPPORT
+Could you guide me through the account registration process?,REQUEST,IN_SCOPE,ACCOUNTS_CUSTOMER_SUPPORT
+Please tell me how to update my account information.,REQUEST,IN_SCOPE,ACCOUNTS_CUSTOMER_SUPPORT
+Can you explain the steps for changing my account email?,REQUEST,IN_SCOPE,ACCOUNTS_CUSTOMER_SUPPORT
+Please provide guidance on resolving login problems.,REQUEST,IN_SCOPE,ACCOUNTS_CUSTOMER_SUPPORT
+Could you tell me how to request account deletion?,REQUEST,IN_SCOPE,ACCOUNTS_CUSTOMER_SUPPORT
+Please explain how to reach the customer support team.,REQUEST,IN_SCOPE,ACCOUNTS_CUSTOMER_SUPPORT
+Would you clarify what to do when account registration fails?,REQUEST,IN_SCOPE,ACCOUNTS_CUSTOMER_SUPPORT
+The account password is not being accepted during login.,DESCRIPTIVE,IN_SCOPE,ACCOUNTS_CUSTOMER_SUPPORT
+The registered email address needs to be changed.,DESCRIPTIVE,IN_SCOPE,ACCOUNTS_CUSTOMER_SUPPORT
+The account registration process has not been completed.,DESCRIPTIVE,IN_SCOPE,ACCOUNTS_CUSTOMER_SUPPORT
+The personal details saved in the account are outdated.,DESCRIPTIVE,IN_SCOPE,ACCOUNTS_CUSTOMER_SUPPORT
+The login page is not accepting the account credentials.,DESCRIPTIVE,IN_SCOPE,ACCOUNTS_CUSTOMER_SUPPORT
+The account is no longer needed and is being considered for deletion.,DESCRIPTIVE,IN_SCOPE,ACCOUNTS_CUSTOMER_SUPPORT
+The customer support team is needed to address an account issue.,DESCRIPTIVE,IN_SCOPE,ACCOUNTS_CUSTOMER_SUPPORT
+The password recovery process requires additional guidance.,DESCRIPTIVE,IN_SCOPE,ACCOUNTS_CUSTOMER_SUPPORT
+Store account password recovery.,OTHER,IN_SCOPE,ACCOUNTS_CUSTOMER_SUPPORT
+An issue with accessing an existing customer account.,OTHER,IN_SCOPE,ACCOUNTS_CUSTOMER_SUPPORT
+Updating personal information in a store account.,OTHER,IN_SCOPE,ACCOUNTS_CUSTOMER_SUPPORT
+The account registration procedure.,OTHER,IN_SCOPE,ACCOUNTS_CUSTOMER_SUPPORT
+Assistance with changing a registered email address.,OTHER,IN_SCOPE,ACCOUNTS_CUSTOMER_SUPPORT
+Problems encountered during customer account login.,OTHER,IN_SCOPE,ACCOUNTS_CUSTOMER_SUPPORT
+The process of requesting account deletion.,OTHER,IN_SCOPE,ACCOUNTS_CUSTOMER_SUPPORT
+Contact information for customer account assistance.,OTHER,IN_SCOPE,ACCOUNTS_CUSTOMER_SUPPORT
+Is this product currently available in the store?,QUESTION,IN_SCOPE,PRODUCTS_PROMOTIONS
+How can I find out whether an item is back in stock?,QUESTION,IN_SCOPE,PRODUCTS_PROMOTIONS
+Do you offer discounts on selected products?,QUESTION,IN_SCOPE,PRODUCTS_PROMOTIONS
+Where can I find information about current promotions?,QUESTION,IN_SCOPE,PRODUCTS_PROMOTIONS
+Are promotional offers available for all products?,QUESTION,IN_SCOPE,PRODUCTS_PROMOTIONS
+Can I use a discount code when placing an order?,QUESTION,IN_SCOPE,PRODUCTS_PROMOTIONS
+How do I know if a product qualifies for a special offer?,QUESTION,IN_SCOPE,PRODUCTS_PROMOTIONS
+Do product prices change during promotional periods?,QUESTION,IN_SCOPE,PRODUCTS_PROMOTIONS
+I am looking for a product that is currently out of stock.,PERSONAL,IN_SCOPE,PRODUCTS_PROMOTIONS
+"I found an item online, but I cannot tell if it is available.",PERSONAL,IN_SCOPE,PRODUCTS_PROMOTIONS
+I would like to purchase a product using a current discount.,PERSONAL,IN_SCOPE,PRODUCTS_PROMOTIONS
+I received a promotional code but do not know if it is valid.,PERSONAL,IN_SCOPE,PRODUCTS_PROMOTIONS
+I am interested in the products included in your current offers.,PERSONAL,IN_SCOPE,PRODUCTS_PROMOTIONS
+The discount code I entered was not applied to my purchase.,PERSONAL,IN_SCOPE,PRODUCTS_PROMOTIONS
+I want to know whether the item I selected has a special offer.,PERSONAL,IN_SCOPE,PRODUCTS_PROMOTIONS
+I noticed a different price for a product during a promotion.,PERSONAL,IN_SCOPE,PRODUCTS_PROMOTIONS
+Please explain how to check product availability.,REQUEST,IN_SCOPE,PRODUCTS_PROMOTIONS
+Could you tell me where to find the current store promotions?,REQUEST,IN_SCOPE,PRODUCTS_PROMOTIONS
+Please provide information about products included in discounts.,REQUEST,IN_SCOPE,PRODUCTS_PROMOTIONS
+Can you explain how to apply a promotional discount code?,REQUEST,IN_SCOPE,PRODUCTS_PROMOTIONS
+Please clarify whether this item is eligible for an offer.,REQUEST,IN_SCOPE,PRODUCTS_PROMOTIONS
+Would you explain how product availability is updated?,REQUEST,IN_SCOPE,PRODUCTS_PROMOTIONS
+Please help me understand the conditions of a promotional offer.,REQUEST,IN_SCOPE,PRODUCTS_PROMOTIONS
+Could you provide details about discounts on selected products?,REQUEST,IN_SCOPE,PRODUCTS_PROMOTIONS
+The selected product is currently listed as unavailable.,DESCRIPTIVE,IN_SCOPE,PRODUCTS_PROMOTIONS
+The item is not appearing in the available product listings.,DESCRIPTIVE,IN_SCOPE,PRODUCTS_PROMOTIONS
+A promotional discount is displayed on the product page.,DESCRIPTIVE,IN_SCOPE,PRODUCTS_PROMOTIONS
+The discount code was entered but was not applied.,DESCRIPTIVE,IN_SCOPE,PRODUCTS_PROMOTIONS
+The current promotion includes only selected products.,DESCRIPTIVE,IN_SCOPE,PRODUCTS_PROMOTIONS
+The product price appears different during the promotional period.,DESCRIPTIVE,IN_SCOPE,PRODUCTS_PROMOTIONS
+The selected item has no visible promotional offer.,DESCRIPTIVE,IN_SCOPE,PRODUCTS_PROMOTIONS
+Product availability information is needed before making a purchase.,DESCRIPTIVE,IN_SCOPE,PRODUCTS_PROMOTIONS
+Product availability and stock information.,OTHER,IN_SCOPE,PRODUCTS_PROMOTIONS
+Details about currently available store promotions.,OTHER,IN_SCOPE,PRODUCTS_PROMOTIONS
+Discount eligibility for selected products.,OTHER,IN_SCOPE,PRODUCTS_PROMOTIONS
+Applying a promotional code to a purchase.,OTHER,IN_SCOPE,PRODUCTS_PROMOTIONS
+Information about products included in special offers.,OTHER,IN_SCOPE,PRODUCTS_PROMOTIONS
+A product listed as unavailable in the store.,OTHER,IN_SCOPE,PRODUCTS_PROMOTIONS
+Conditions associated with promotional discounts.,OTHER,IN_SCOPE,PRODUCTS_PROMOTIONS
+Changes in product prices during promotional periods.,OTHER,IN_SCOPE,PRODUCTS_PROMOTIONS
+Why is the sky blue during the day?,QUESTION,OUT_OF_SCOPE,SCIENCE_NATURE
+How do plants produce oxygen?,QUESTION,OUT_OF_SCOPE,SCIENCE_NATURE
+What causes earthquakes to happen?,QUESTION,OUT_OF_SCOPE,SCIENCE_NATURE
+Why do some animals hibernate in winter?,QUESTION,OUT_OF_SCOPE,SCIENCE_NATURE
+How does the water cycle work?,QUESTION,OUT_OF_SCOPE,SCIENCE_NATURE
+What makes the ocean salty?,QUESTION,OUT_OF_SCOPE,SCIENCE_NATURE
+Why do leaves change color in autumn?,QUESTION,OUT_OF_SCOPE,SCIENCE_NATURE
+How are fossils formed over time?,QUESTION,OUT_OF_SCOPE,SCIENCE_NATURE
+I have always been curious about how stars are formed.,PERSONAL,OUT_OF_SCOPE,SCIENCE_NATURE
+I noticed that the moon looks different throughout the month.,PERSONAL,OUT_OF_SCOPE,SCIENCE_NATURE
+I enjoy learning about different species of birds.,PERSONAL,OUT_OF_SCOPE,SCIENCE_NATURE
+I recently became interested in marine ecosystems.,PERSONAL,OUT_OF_SCOPE,SCIENCE_NATURE
+I love observing how plants grow in my garden.,PERSONAL,OUT_OF_SCOPE,SCIENCE_NATURE
+I was surprised to learn that some animals glow in the dark.,PERSONAL,OUT_OF_SCOPE,SCIENCE_NATURE
+I have been reading about volcanic eruptions lately.,PERSONAL,OUT_OF_SCOPE,SCIENCE_NATURE
+I find the behavior of migrating animals fascinating.,PERSONAL,OUT_OF_SCOPE,SCIENCE_NATURE
+Explain how solar eclipses occur.,REQUEST,OUT_OF_SCOPE,SCIENCE_NATURE
+Describe the main stages of the life cycle of a butterfly.,REQUEST,OUT_OF_SCOPE,SCIENCE_NATURE
+Tell me how glaciers shape the Earth's surface.,REQUEST,OUT_OF_SCOPE,SCIENCE_NATURE
+Provide an explanation of photosynthesis.,REQUEST,OUT_OF_SCOPE,SCIENCE_NATURE
+Describe the differences between mammals and reptiles.,REQUEST,OUT_OF_SCOPE,SCIENCE_NATURE
+Explain why ocean currents move across the planet.,REQUEST,OUT_OF_SCOPE,SCIENCE_NATURE
+Tell me how thunderstorms develop.,REQUEST,OUT_OF_SCOPE,SCIENCE_NATURE
+Summarize the process of rock formation.,REQUEST,OUT_OF_SCOPE,SCIENCE_NATURE
+The rainforest contains many different species of plants and animals.,DESCRIPTIVE,OUT_OF_SCOPE,SCIENCE_NATURE
+A solar eclipse occurs when the moon passes between Earth and the sun.,DESCRIPTIVE,OUT_OF_SCOPE,SCIENCE_NATURE
+Coral reefs provide habitats for numerous marine organisms.,DESCRIPTIVE,OUT_OF_SCOPE,SCIENCE_NATURE
+"Volcanoes release molten rock, gases, and ash during eruptions.",DESCRIPTIVE,OUT_OF_SCOPE,SCIENCE_NATURE
+The desert environment receives very little annual rainfall.,DESCRIPTIVE,OUT_OF_SCOPE,SCIENCE_NATURE
+Migratory birds travel long distances between seasonal habitats.,DESCRIPTIVE,OUT_OF_SCOPE,SCIENCE_NATURE
+The Earth's atmosphere consists of several layers of gases.,DESCRIPTIVE,OUT_OF_SCOPE,SCIENCE_NATURE
+A glacier is a large mass of ice that moves slowly over land.,DESCRIPTIVE,OUT_OF_SCOPE,SCIENCE_NATURE
+Interesting facts about the planets in our solar system.,OTHER,OUT_OF_SCOPE,SCIENCE_NATURE
+The relationship between biodiversity and ecosystem health.,OTHER,OUT_OF_SCOPE,SCIENCE_NATURE
+An overview of different types of clouds.,OTHER,OUT_OF_SCOPE,SCIENCE_NATURE
+Facts about endangered animal species around the world.,OTHER,OUT_OF_SCOPE,SCIENCE_NATURE
+The importance of wetlands for wildlife.,OTHER,OUT_OF_SCOPE,SCIENCE_NATURE
+A brief introduction to plate tectonics.,OTHER,OUT_OF_SCOPE,SCIENCE_NATURE
+The natural habitats of polar bears and penguins.,OTHER,OUT_OF_SCOPE,SCIENCE_NATURE
+Information about renewable energy from sunlight.,OTHER,OUT_OF_SCOPE,SCIENCE_NATURE
+How can I improve my English vocabulary?,QUESTION,OUT_OF_SCOPE,EDUCATION_LANGUAGE
+What is the difference between a noun and a verb?,QUESTION,OUT_OF_SCOPE,EDUCATION_LANGUAGE
+Why is mathematics important in everyday life?,QUESTION,OUT_OF_SCOPE,EDUCATION_LANGUAGE
+How do students prepare for university entrance exams?,QUESTION,OUT_OF_SCOPE,EDUCATION_LANGUAGE
+What are the main differences between online and classroom learning?,QUESTION,OUT_OF_SCOPE,EDUCATION_LANGUAGE
+How can I develop better reading comprehension skills?,QUESTION,OUT_OF_SCOPE,EDUCATION_LANGUAGE
+What is the purpose of academic research?,QUESTION,OUT_OF_SCOPE,EDUCATION_LANGUAGE
+How do language learners practice pronunciation effectively?,QUESTION,OUT_OF_SCOPE,EDUCATION_LANGUAGE
+I have been studying Spanish for several months.,PERSONAL,OUT_OF_SCOPE,EDUCATION_LANGUAGE
+I enjoy reading historical novels in my free time.,PERSONAL,OUT_OF_SCOPE,EDUCATION_LANGUAGE
+I recently started learning how to write academic essays.,PERSONAL,OUT_OF_SCOPE,EDUCATION_LANGUAGE
+I find learning new languages very rewarding.,PERSONAL,OUT_OF_SCOPE,EDUCATION_LANGUAGE
+I struggled with mathematics when I was in school.,PERSONAL,OUT_OF_SCOPE,EDUCATION_LANGUAGE
+I prefer studying in a quiet library.,PERSONAL,OUT_OF_SCOPE,EDUCATION_LANGUAGE
+I have always enjoyed reading classic literature.,PERSONAL,OUT_OF_SCOPE,EDUCATION_LANGUAGE
+I recently joined an online course about creative writing.,PERSONAL,OUT_OF_SCOPE,EDUCATION_LANGUAGE
+Explain the difference between formal and informal language.,REQUEST,OUT_OF_SCOPE,EDUCATION_LANGUAGE
+Describe the main steps involved in writing a research paper.,REQUEST,OUT_OF_SCOPE,EDUCATION_LANGUAGE
+Give me an overview of the English grammar system.,REQUEST,OUT_OF_SCOPE,EDUCATION_LANGUAGE
+Summarize the key ideas of the Renaissance period.,REQUEST,OUT_OF_SCOPE,EDUCATION_LANGUAGE
+Explain how the human memory supports learning.,REQUEST,OUT_OF_SCOPE,EDUCATION_LANGUAGE
+Describe different methods of teaching a foreign language.,REQUEST,OUT_OF_SCOPE,EDUCATION_LANGUAGE
+Provide examples of common literary devices.,REQUEST,OUT_OF_SCOPE,EDUCATION_LANGUAGE
+Explain the basic principles of effective note-taking.,REQUEST,OUT_OF_SCOPE,EDUCATION_LANGUAGE
+The university offers several programs in literature and linguistics.,DESCRIPTIVE,OUT_OF_SCOPE,EDUCATION_LANGUAGE
+Academic writing usually follows a structured format.,DESCRIPTIVE,OUT_OF_SCOPE,EDUCATION_LANGUAGE
+The classroom was filled with students preparing for their examinations.,DESCRIPTIVE,OUT_OF_SCOPE,EDUCATION_LANGUAGE
+Bilingual education involves learning through two languages.,DESCRIPTIVE,OUT_OF_SCOPE,EDUCATION_LANGUAGE
+The library contains books covering a wide range of academic subjects.,DESCRIPTIVE,OUT_OF_SCOPE,EDUCATION_LANGUAGE
+"Poetry often uses rhythm, imagery, and figurative language.",DESCRIPTIVE,OUT_OF_SCOPE,EDUCATION_LANGUAGE
+The history course examines major events from ancient civilizations.,DESCRIPTIVE,OUT_OF_SCOPE,EDUCATION_LANGUAGE
+Students submitted their research papers before the final deadline.,DESCRIPTIVE,OUT_OF_SCOPE,EDUCATION_LANGUAGE
+An introduction to world literature and its major movements.,OTHER,OUT_OF_SCOPE,EDUCATION_LANGUAGE
+The development of writing systems throughout human history.,OTHER,OUT_OF_SCOPE,EDUCATION_LANGUAGE
+A comparison of different educational philosophies.,OTHER,OUT_OF_SCOPE,EDUCATION_LANGUAGE
+Important milestones in the history of mathematics.,OTHER,OUT_OF_SCOPE,EDUCATION_LANGUAGE
+The role of grammar in effective communication.,OTHER,OUT_OF_SCOPE,EDUCATION_LANGUAGE
+An overview of classical Arabic poetry.,OTHER,OUT_OF_SCOPE,EDUCATION_LANGUAGE
+Study techniques for improving long-term memory.,OTHER,OUT_OF_SCOPE,EDUCATION_LANGUAGE
+The relationship between culture and language development.,OTHER,OUT_OF_SCOPE,EDUCATION_LANGUAGE
+How does a compiler translate source code into machine instructions?,QUESTION,OUT_OF_SCOPE,TECHNOLOGY_PROGRAMMING
+What is the difference between RAM and storage?,QUESTION,OUT_OF_SCOPE,TECHNOLOGY_PROGRAMMING
+Why do programming languages use different data types?,QUESTION,OUT_OF_SCOPE,TECHNOLOGY_PROGRAMMING
+How does an operating system manage running processes?,QUESTION,OUT_OF_SCOPE,TECHNOLOGY_PROGRAMMING
+What is the purpose of an application programming interface?,QUESTION,OUT_OF_SCOPE,TECHNOLOGY_PROGRAMMING
+Can a computer execute multiple threads at the same time?,QUESTION,OUT_OF_SCOPE,TECHNOLOGY_PROGRAMMING
+How does encryption protect information during transmission?,QUESTION,OUT_OF_SCOPE,TECHNOLOGY_PROGRAMMING
+What makes a database relational rather than non-relational?,QUESTION,OUT_OF_SCOPE,TECHNOLOGY_PROGRAMMING
+I started learning Python because I want to understand how software works.,PERSONAL,OUT_OF_SCOPE,TECHNOLOGY_PROGRAMMING
+I find debugging code more challenging than writing it.,PERSONAL,OUT_OF_SCOPE,TECHNOLOGY_PROGRAMMING
+I recently built my first small web application.,PERSONAL,OUT_OF_SCOPE,TECHNOLOGY_PROGRAMMING
+I prefer using Linux when experimenting with programming tools.,PERSONAL,OUT_OF_SCOPE,TECHNOLOGY_PROGRAMMING
+I have been exploring how artificial intelligence models are trained.,PERSONAL,OUT_OF_SCOPE,TECHNOLOGY_PROGRAMMING
+I enjoy learning about computer hardware and processor architecture.,PERSONAL,OUT_OF_SCOPE,TECHNOLOGY_PROGRAMMING
+I am practicing SQL to improve my database skills.,PERSONAL,OUT_OF_SCOPE,TECHNOLOGY_PROGRAMMING
+I switched to a different code editor to improve my workflow.,PERSONAL,OUT_OF_SCOPE,TECHNOLOGY_PROGRAMMING
+Explain the main stages of software development.,REQUEST,OUT_OF_SCOPE,TECHNOLOGY_PROGRAMMING
+Compare interpreted languages with compiled languages.,REQUEST,OUT_OF_SCOPE,TECHNOLOGY_PROGRAMMING
+Show how a Python loop processes a list of values.,REQUEST,OUT_OF_SCOPE,TECHNOLOGY_PROGRAMMING
+Describe the role of an operating system kernel.,REQUEST,OUT_OF_SCOPE,TECHNOLOGY_PROGRAMMING
+Summarize the differences between HTTP and HTTPS.,REQUEST,OUT_OF_SCOPE,TECHNOLOGY_PROGRAMMING
+Demonstrate how recursion works using a simple example.,REQUEST,OUT_OF_SCOPE,TECHNOLOGY_PROGRAMMING
+Outline the basic components of a computer network.,REQUEST,OUT_OF_SCOPE,TECHNOLOGY_PROGRAMMING
+Explain how version control tracks changes in source code.,REQUEST,OUT_OF_SCOPE,TECHNOLOGY_PROGRAMMING
+A compiler converts human-readable source code into a form that a computer can execute.,DESCRIPTIVE,OUT_OF_SCOPE,TECHNOLOGY_PROGRAMMING
+RAM provides temporary memory that programs use while they are running.,DESCRIPTIVE,OUT_OF_SCOPE,TECHNOLOGY_PROGRAMMING
+An operating system coordinates hardware resources and software processes.,DESCRIPTIVE,OUT_OF_SCOPE,TECHNOLOGY_PROGRAMMING
+A database index helps retrieve records more efficiently.,DESCRIPTIVE,OUT_OF_SCOPE,TECHNOLOGY_PROGRAMMING
+Machine learning algorithms identify patterns from data during training.,DESCRIPTIVE,OUT_OF_SCOPE,TECHNOLOGY_PROGRAMMING
+An API defines how different software components communicate with each other.,DESCRIPTIVE,OUT_OF_SCOPE,TECHNOLOGY_PROGRAMMING
+Cloud computing provides access to computing resources through remote servers.,DESCRIPTIVE,OUT_OF_SCOPE,TECHNOLOGY_PROGRAMMING
+Version control systems maintain a history of changes made to project files.,DESCRIPTIVE,OUT_OF_SCOPE,TECHNOLOGY_PROGRAMMING
+"Python, Java, and C++ are widely used programming languages.",OTHER,OUT_OF_SCOPE,TECHNOLOGY_PROGRAMMING
+The latest processor architecture includes improvements in performance and efficiency.,OTHER,OUT_OF_SCOPE,TECHNOLOGY_PROGRAMMING
+Open-source software allows developers to inspect and modify its source code.,OTHER,OUT_OF_SCOPE,TECHNOLOGY_PROGRAMMING
+A relational database organizes information into connected tables.,OTHER,OUT_OF_SCOPE,TECHNOLOGY_PROGRAMMING
+Artificial intelligence is used in image recognition and natural language processing.,OTHER,OUT_OF_SCOPE,TECHNOLOGY_PROGRAMMING
+The command line provides a text-based interface for interacting with a computer.,OTHER,OUT_OF_SCOPE,TECHNOLOGY_PROGRAMMING
+Software testing helps identify defects before an application is released.,OTHER,OUT_OF_SCOPE,TECHNOLOGY_PROGRAMMING
+Containerization packages applications with their required dependencies.,OTHER,OUT_OF_SCOPE,TECHNOLOGY_PROGRAMMING
+What causes different time zones around the world?,QUESTION,OUT_OF_SCOPE,TRAVEL_GEOGRAPHY
+Why do some countries have multiple official languages?,QUESTION,OUT_OF_SCOPE,TRAVEL_GEOGRAPHY
+How are mountain ranges formed by tectonic plate movements?,QUESTION,OUT_OF_SCOPE,TRAVEL_GEOGRAPHY
+What is the difference between a peninsula and an island?,QUESTION,OUT_OF_SCOPE,TRAVEL_GEOGRAPHY
+How does ocean circulation influence global climate?,QUESTION,OUT_OF_SCOPE,TRAVEL_GEOGRAPHY
+Which factors determine the location of international borders?,QUESTION,OUT_OF_SCOPE,TRAVEL_GEOGRAPHY
+Why do some regions experience monsoon seasons?,QUESTION,OUT_OF_SCOPE,TRAVEL_GEOGRAPHY
+How are national parks protected across different countries?,QUESTION,OUT_OF_SCOPE,TRAVEL_GEOGRAPHY
+I enjoy learning about the geography of countries I have never visited.,PERSONAL,OUT_OF_SCOPE,TRAVEL_GEOGRAPHY
+I traveled to Japan and was fascinated by its mountain landscapes.,PERSONAL,OUT_OF_SCOPE,TRAVEL_GEOGRAPHY
+I would love to explore the historical cities of Italy someday.,PERSONAL,OUT_OF_SCOPE,TRAVEL_GEOGRAPHY
+I usually study maps before planning an international trip.,PERSONAL,OUT_OF_SCOPE,TRAVEL_GEOGRAPHY
+I prefer visiting coastal destinations during the summer.,PERSONAL,OUT_OF_SCOPE,TRAVEL_GEOGRAPHY
+I recently became interested in the cultures of South America.,PERSONAL,OUT_OF_SCOPE,TRAVEL_GEOGRAPHY
+I like comparing the climates of different geographical regions.,PERSONAL,OUT_OF_SCOPE,TRAVEL_GEOGRAPHY
+I have always wanted to see the northern lights in person.,PERSONAL,OUT_OF_SCOPE,TRAVEL_GEOGRAPHY
+Describe the geographical regions of Saudi Arabia.,REQUEST,OUT_OF_SCOPE,TRAVEL_GEOGRAPHY
+Compare the climates of tropical and temperate regions.,REQUEST,OUT_OF_SCOPE,TRAVEL_GEOGRAPHY
+Explain how international flight routes are determined.,REQUEST,OUT_OF_SCOPE,TRAVEL_GEOGRAPHY
+Summarize the main geographical features of the European continent.,REQUEST,OUT_OF_SCOPE,TRAVEL_GEOGRAPHY
+Outline the historical development of the Silk Road.,REQUEST,OUT_OF_SCOPE,TRAVEL_GEOGRAPHY
+Explain the difference between longitude and latitude.,REQUEST,OUT_OF_SCOPE,TRAVEL_GEOGRAPHY
+Describe the major river systems of South America.,REQUEST,OUT_OF_SCOPE,TRAVEL_GEOGRAPHY
+Compare the population distribution of urban and rural regions.,REQUEST,OUT_OF_SCOPE,TRAVEL_GEOGRAPHY
+The Sahara is the largest hot desert in the world.,DESCRIPTIVE,OUT_OF_SCOPE,TRAVEL_GEOGRAPHY
+The Andes mountain range extends along the western side of South America.,DESCRIPTIVE,OUT_OF_SCOPE,TRAVEL_GEOGRAPHY
+The Mediterranean Sea connects several countries across three continents.,DESCRIPTIVE,OUT_OF_SCOPE,TRAVEL_GEOGRAPHY
+Japan consists of thousands of islands in the Pacific Ocean.,DESCRIPTIVE,OUT_OF_SCOPE,TRAVEL_GEOGRAPHY
+The equator divides Earth into the Northern and Southern Hemispheres.,DESCRIPTIVE,OUT_OF_SCOPE,TRAVEL_GEOGRAPHY
+The Amazon River flows through a large rainforest region in South America.,DESCRIPTIVE,OUT_OF_SCOPE,TRAVEL_GEOGRAPHY
+The Alps form a major mountain system in central Europe.,DESCRIPTIVE,OUT_OF_SCOPE,TRAVEL_GEOGRAPHY
+Antarctica is the coldest continent on Earth.,DESCRIPTIVE,OUT_OF_SCOPE,TRAVEL_GEOGRAPHY
+The Great Wall of China stretches across several northern regions of the country.,OTHER,OUT_OF_SCOPE,TRAVEL_GEOGRAPHY
+Iceland is known for its volcanic landscapes and geothermal activity.,OTHER,OUT_OF_SCOPE,TRAVEL_GEOGRAPHY
+The Nile River has played an important role in the history of northeastern Africa.,OTHER,OUT_OF_SCOPE,TRAVEL_GEOGRAPHY
+The Pacific Ocean is the largest ocean on Earth.,OTHER,OUT_OF_SCOPE,TRAVEL_GEOGRAPHY
+The historic city of Petra is located in southern Jordan.,OTHER,OUT_OF_SCOPE,TRAVEL_GEOGRAPHY
+The Himalayas contain many of the world's highest mountain peaks.,OTHER,OUT_OF_SCOPE,TRAVEL_GEOGRAPHY
+The Amazon rainforest spans several South American countries.,OTHER,OUT_OF_SCOPE,TRAVEL_GEOGRAPHY
+"The Mediterranean climate features dry summers and mild, wet winters.",OTHER,OUT_OF_SCOPE,TRAVEL_GEOGRAPHY
+How does the scoring system work in professional tennis?,QUESTION,OUT_OF_SCOPE,SPORTS_ENTERTAINMENT
+Why do football teams use different tactical formations?,QUESTION,OUT_OF_SCOPE,SPORTS_ENTERTAINMENT
+What determines the winner of an Olympic gymnastics competition?,QUESTION,OUT_OF_SCOPE,SPORTS_ENTERTAINMENT
+How are points calculated in Formula One racing?,QUESTION,OUT_OF_SCOPE,SPORTS_ENTERTAINMENT
+Why do basketball players specialize in different positions?,QUESTION,OUT_OF_SCOPE,SPORTS_ENTERTAINMENT
+What is the difference between a knockout tournament and a league?,QUESTION,OUT_OF_SCOPE,SPORTS_ENTERTAINMENT
+How does a film director develop a visual storytelling style?,QUESTION,OUT_OF_SCOPE,SPORTS_ENTERTAINMENT
+Why do some musical instruments produce higher pitches than others?,QUESTION,OUT_OF_SCOPE,SPORTS_ENTERTAINMENT
+I enjoy watching international football tournaments.,PERSONAL,OUT_OF_SCOPE,SPORTS_ENTERTAINMENT
+I recently started following professional tennis.,PERSONAL,OUT_OF_SCOPE,SPORTS_ENTERTAINMENT
+I prefer documentaries about famous historical athletes.,PERSONAL,OUT_OF_SCOPE,SPORTS_ENTERTAINMENT
+I have always been interested in classical music performances.,PERSONAL,OUT_OF_SCOPE,SPORTS_ENTERTAINMENT
+I enjoy attending live concerts with my friends.,PERSONAL,OUT_OF_SCOPE,SPORTS_ENTERTAINMENT
+I started learning how to play the piano last year.,PERSONAL,OUT_OF_SCOPE,SPORTS_ENTERTAINMENT
+I usually watch basketball games during the weekend.,PERSONAL,OUT_OF_SCOPE,SPORTS_ENTERTAINMENT
+I love exploring films from different countries and cultures.,PERSONAL,OUT_OF_SCOPE,SPORTS_ENTERTAINMENT
+Explain the history of the Olympic Games.,REQUEST,OUT_OF_SCOPE,SPORTS_ENTERTAINMENT
+Compare the playing styles of defensive and attacking football teams.,REQUEST,OUT_OF_SCOPE,SPORTS_ENTERTAINMENT
+Describe the main rules of volleyball.,REQUEST,OUT_OF_SCOPE,SPORTS_ENTERTAINMENT
+Summarize the evolution of animated films.,REQUEST,OUT_OF_SCOPE,SPORTS_ENTERTAINMENT
+Explain how chess tournaments determine player rankings.,REQUEST,OUT_OF_SCOPE,SPORTS_ENTERTAINMENT
+Outline the different stages of a professional boxing match.,REQUEST,OUT_OF_SCOPE,SPORTS_ENTERTAINMENT
+Compare classical music with contemporary popular music.,REQUEST,OUT_OF_SCOPE,SPORTS_ENTERTAINMENT
+Describe how motion capture technology is used in filmmaking.,REQUEST,OUT_OF_SCOPE,SPORTS_ENTERTAINMENT
+The FIFA World Cup is an international football tournament held every four years.,DESCRIPTIVE,OUT_OF_SCOPE,SPORTS_ENTERTAINMENT
+Basketball games are played between two teams attempting to score points through a hoop.,DESCRIPTIVE,OUT_OF_SCOPE,SPORTS_ENTERTAINMENT
+The Olympic Games include athletes competing in a wide range of sports.,DESCRIPTIVE,OUT_OF_SCOPE,SPORTS_ENTERTAINMENT
+A symphony orchestra combines different families of musical instruments.,DESCRIPTIVE,OUT_OF_SCOPE,SPORTS_ENTERTAINMENT
+Documentary films present factual information about real events and people.,DESCRIPTIVE,OUT_OF_SCOPE,SPORTS_ENTERTAINMENT
+Professional cycling competitions often include multiple stages across different regions.,DESCRIPTIVE,OUT_OF_SCOPE,SPORTS_ENTERTAINMENT
+Chess requires strategic planning and careful consideration of possible moves.,DESCRIPTIVE,OUT_OF_SCOPE,SPORTS_ENTERTAINMENT
+The film industry uses visual effects to create scenes that are difficult to capture naturally.,DESCRIPTIVE,OUT_OF_SCOPE,SPORTS_ENTERTAINMENT
+The Wimbledon Championships are among the oldest tennis tournaments.,OTHER,OUT_OF_SCOPE,SPORTS_ENTERTAINMENT
+Jazz music is known for improvisation and distinctive rhythmic patterns.,OTHER,OUT_OF_SCOPE,SPORTS_ENTERTAINMENT
+The National Basketball Association is a professional basketball league.,OTHER,OUT_OF_SCOPE,SPORTS_ENTERTAINMENT
+"Ballet combines music, choreography, and highly controlled physical movements.",OTHER,OUT_OF_SCOPE,SPORTS_ENTERTAINMENT
+The Cannes Film Festival celebrates achievements in international cinema.,OTHER,OUT_OF_SCOPE,SPORTS_ENTERTAINMENT
+Marathon running is a long-distance athletic event.,OTHER,OUT_OF_SCOPE,SPORTS_ENTERTAINMENT
+Video game competitions have developed into organized international esports events.,OTHER,OUT_OF_SCOPE,SPORTS_ENTERTAINMENT
+The Grammy Awards recognize achievements in the music industry.,OTHER,OUT_OF_SCOPE,SPORTS_ENTERTAINMENT
+Can you explain what I should do about this?,QUESTION,UNCLEAR_SCOPE,MISSING_CONTEXT
+Why is this happening to me?,QUESTION,UNCLEAR_SCOPE,MISSING_CONTEXT
+Is there a way to fix it?,QUESTION,UNCLEAR_SCOPE,MISSING_CONTEXT
+What does this mean?,QUESTION,UNCLEAR_SCOPE,MISSING_CONTEXT
+Could you tell me why it is not working?,QUESTION,UNCLEAR_SCOPE,MISSING_CONTEXT
+Is this supposed to happen?,QUESTION,UNCLEAR_SCOPE,MISSING_CONTEXT
+What should I do next?,QUESTION,UNCLEAR_SCOPE,MISSING_CONTEXT
+Can you help me understand what went wrong?,QUESTION,UNCLEAR_SCOPE,MISSING_CONTEXT
+I am having an issue and I cannot figure it out.,PERSONAL,UNCLEAR_SCOPE,MISSING_CONTEXT
+I have been trying to solve this for a while.,PERSONAL,UNCLEAR_SCOPE,MISSING_CONTEXT
+"I am not sure what happened, but something seems wrong.",PERSONAL,UNCLEAR_SCOPE,MISSING_CONTEXT
+I feel stuck and do not know how to continue.,PERSONAL,UNCLEAR_SCOPE,MISSING_CONTEXT
+I noticed something unusual earlier today.,PERSONAL,UNCLEAR_SCOPE,MISSING_CONTEXT
+"I tried a few things, but nothing seems to help.",PERSONAL,UNCLEAR_SCOPE,MISSING_CONTEXT
+I am confused about what I am supposed to do.,PERSONAL,UNCLEAR_SCOPE,MISSING_CONTEXT
+I have a problem that I cannot clearly describe.,PERSONAL,UNCLEAR_SCOPE,MISSING_CONTEXT
+Please help me figure this out.,REQUEST,UNCLEAR_SCOPE,MISSING_CONTEXT
+Can you take a look at this for me?,REQUEST,UNCLEAR_SCOPE,MISSING_CONTEXT
+Please tell me what I need to do.,REQUEST,UNCLEAR_SCOPE,MISSING_CONTEXT
+Help me understand the situation.,REQUEST,UNCLEAR_SCOPE,MISSING_CONTEXT
+Could you explain what is going on?,REQUEST,UNCLEAR_SCOPE,MISSING_CONTEXT
+Please guide me through this issue.,REQUEST,UNCLEAR_SCOPE,MISSING_CONTEXT
+I need some assistance with something.,REQUEST,UNCLEAR_SCOPE,MISSING_CONTEXT
+Can you help me resolve the problem?,REQUEST,UNCLEAR_SCOPE,MISSING_CONTEXT
+Something is not behaving the way I expected.,DESCRIPTIVE,UNCLEAR_SCOPE,MISSING_CONTEXT
+"There seems to be an issue, but I cannot identify its cause.",DESCRIPTIVE,UNCLEAR_SCOPE,MISSING_CONTEXT
+The situation has become confusing.,DESCRIPTIVE,UNCLEAR_SCOPE,MISSING_CONTEXT
+I noticed that things are different from before.,DESCRIPTIVE,UNCLEAR_SCOPE,MISSING_CONTEXT
+An unexpected problem appeared without a clear explanation.,DESCRIPTIVE,UNCLEAR_SCOPE,MISSING_CONTEXT
+The result does not seem right.,DESCRIPTIVE,UNCLEAR_SCOPE,MISSING_CONTEXT
+There is something unusual that needs attention.,DESCRIPTIVE,UNCLEAR_SCOPE,MISSING_CONTEXT
+The issue is difficult to understand from what I can currently see.,DESCRIPTIVE,UNCLEAR_SCOPE,MISSING_CONTEXT
+I am not sure about this.,OTHER,UNCLEAR_SCOPE,MISSING_CONTEXT
+Something seems off.,OTHER,UNCLEAR_SCOPE,MISSING_CONTEXT
+This is quite confusing.,OTHER,UNCLEAR_SCOPE,MISSING_CONTEXT
+I do not understand what is happening.,OTHER,UNCLEAR_SCOPE,MISSING_CONTEXT
+There is a problem somewhere.,OTHER,UNCLEAR_SCOPE,MISSING_CONTEXT
+I cannot make sense of it.,OTHER,UNCLEAR_SCOPE,MISSING_CONTEXT
+This does not look right to me.,OTHER,UNCLEAR_SCOPE,MISSING_CONTEXT
+I am unsure how to proceed.,OTHER,UNCLEAR_SCOPE,MISSING_CONTEXT
+Can you help me figure out what I should do?,QUESTION,UNCLEAR_SCOPE,VAGUE_REQUESTS
+What would be the best way to approach this?,QUESTION,UNCLEAR_SCOPE,VAGUE_REQUESTS
+Could you suggest something that might work for me?,QUESTION,UNCLEAR_SCOPE,VAGUE_REQUESTS
+How should I go about handling things?,QUESTION,UNCLEAR_SCOPE,VAGUE_REQUESTS
+Can you help me decide on a suitable option?,QUESTION,UNCLEAR_SCOPE,VAGUE_REQUESTS
+What do you think would be a good next step?,QUESTION,UNCLEAR_SCOPE,VAGUE_REQUESTS
+Could you explain what approach I should take?,QUESTION,UNCLEAR_SCOPE,VAGUE_REQUESTS
+Is there a better way to deal with my situation?,QUESTION,UNCLEAR_SCOPE,VAGUE_REQUESTS
+I'm not really sure what I'm looking for right now.,PERSONAL,UNCLEAR_SCOPE,VAGUE_REQUESTS
+I've been thinking about making a change but don't know where to start.,PERSONAL,UNCLEAR_SCOPE,VAGUE_REQUESTS
+I feel like I need some direction.,PERSONAL,UNCLEAR_SCOPE,VAGUE_REQUESTS
+I'm trying to figure out what would work best for me.,PERSONAL,UNCLEAR_SCOPE,VAGUE_REQUESTS
+I've got a few things on my mind and need some guidance.,PERSONAL,UNCLEAR_SCOPE,VAGUE_REQUESTS
+I'm struggling to decide what I actually need.,PERSONAL,UNCLEAR_SCOPE,VAGUE_REQUESTS
+I want to make things better but haven't figured out how.,PERSONAL,UNCLEAR_SCOPE,VAGUE_REQUESTS
+I'm looking for a bit of help with my current situation.,PERSONAL,UNCLEAR_SCOPE,VAGUE_REQUESTS
+Please help me work out a plan.,REQUEST,UNCLEAR_SCOPE,VAGUE_REQUESTS
+I need some general guidance.,REQUEST,UNCLEAR_SCOPE,VAGUE_REQUESTS
+Can you help me find a suitable solution?,REQUEST,UNCLEAR_SCOPE,VAGUE_REQUESTS
+Please suggest what I should focus on.,REQUEST,UNCLEAR_SCOPE,VAGUE_REQUESTS
+I would like some help getting started.,REQUEST,UNCLEAR_SCOPE,VAGUE_REQUESTS
+Help me choose the right approach.,REQUEST,UNCLEAR_SCOPE,VAGUE_REQUESTS
+Please give me some direction on what to do.,REQUEST,UNCLEAR_SCOPE,VAGUE_REQUESTS
+I need assistance figuring out my next move.,REQUEST,UNCLEAR_SCOPE,VAGUE_REQUESTS
+"I have a goal in mind, but I haven't defined the steps yet.",DESCRIPTIVE,UNCLEAR_SCOPE,VAGUE_REQUESTS
+"There are several possibilities, and I'm unsure which direction makes sense.",DESCRIPTIVE,UNCLEAR_SCOPE,VAGUE_REQUESTS
+"I'm looking for a solution, although I haven't decided what it should involve.",DESCRIPTIVE,UNCLEAR_SCOPE,VAGUE_REQUESTS
+"My plans are still unclear, and I need help organizing my thoughts.",DESCRIPTIVE,UNCLEAR_SCOPE,VAGUE_REQUESTS
+"I know I want to improve something, but I haven't identified a clear objective.",DESCRIPTIVE,UNCLEAR_SCOPE,VAGUE_REQUESTS
+I'm considering different approaches without knowing which one fits my needs.,DESCRIPTIVE,UNCLEAR_SCOPE,VAGUE_REQUESTS
+"I have a general idea, but I haven't worked out the details.",DESCRIPTIVE,UNCLEAR_SCOPE,VAGUE_REQUESTS
+"I'm trying to move forward, but my priorities are not yet clear.",DESCRIPTIVE,UNCLEAR_SCOPE,VAGUE_REQUESTS
+"Not sure where to begin, honestly.",OTHER,UNCLEAR_SCOPE,VAGUE_REQUESTS
+Just looking for some direction.,OTHER,UNCLEAR_SCOPE,VAGUE_REQUESTS
+I could use a little guidance here.,OTHER,UNCLEAR_SCOPE,VAGUE_REQUESTS
+Still figuring out what I need.,OTHER,UNCLEAR_SCOPE,VAGUE_REQUESTS
+Any help would be appreciated.,OTHER,UNCLEAR_SCOPE,VAGUE_REQUESTS
+I don't have a clear plan yet.,OTHER,UNCLEAR_SCOPE,VAGUE_REQUESTS
+A bit unsure about the right approach.,OTHER,UNCLEAR_SCOPE,VAGUE_REQUESTS
+Trying to work out what makes sense.,OTHER,UNCLEAR_SCOPE,VAGUE_REQUESTS
+Can you remind me what we discussed earlier?,QUESTION,UNCLEAR_SCOPE,PREVIOUS_CONVERSATION
+What was the option you suggested before?,QUESTION,UNCLEAR_SCOPE,PREVIOUS_CONVERSATION
+Do you remember the issue I mentioned last time?,QUESTION,UNCLEAR_SCOPE,PREVIOUS_CONVERSATION
+Could you repeat the steps we talked about previously?,QUESTION,UNCLEAR_SCOPE,PREVIOUS_CONVERSATION
+What did you say about my earlier request?,QUESTION,UNCLEAR_SCOPE,PREVIOUS_CONVERSATION
+Can we go back to the topic from our last conversation?,QUESTION,UNCLEAR_SCOPE,PREVIOUS_CONVERSATION
+Which solution did we agree on before?,QUESTION,UNCLEAR_SCOPE,PREVIOUS_CONVERSATION
+What was the detail I shared with you earlier?,QUESTION,UNCLEAR_SCOPE,PREVIOUS_CONVERSATION
+I forgot what I told you in our previous chat.,PERSONAL,UNCLEAR_SCOPE,PREVIOUS_CONVERSATION
+I was talking to you about this yesterday.,PERSONAL,UNCLEAR_SCOPE,PREVIOUS_CONVERSATION
+I can't remember the recommendation you gave me before.,PERSONAL,UNCLEAR_SCOPE,PREVIOUS_CONVERSATION
+"We discussed my situation earlier, but I lost track of the details.",PERSONAL,UNCLEAR_SCOPE,PREVIOUS_CONVERSATION
+I mentioned something important in our last conversation.,PERSONAL,UNCLEAR_SCOPE,PREVIOUS_CONVERSATION
+I want to continue where we left off previously.,PERSONAL,UNCLEAR_SCOPE,PREVIOUS_CONVERSATION
+I already explained this to you in another conversation.,PERSONAL,UNCLEAR_SCOPE,PREVIOUS_CONVERSATION
+I'm referring to the thing I told you about before.,PERSONAL,UNCLEAR_SCOPE,PREVIOUS_CONVERSATION
+Please continue from where we stopped last time.,REQUEST,UNCLEAR_SCOPE,PREVIOUS_CONVERSATION
+Remind me of the details from our previous discussion.,REQUEST,UNCLEAR_SCOPE,PREVIOUS_CONVERSATION
+Can you bring back the suggestion you made earlier?,REQUEST,UNCLEAR_SCOPE,PREVIOUS_CONVERSATION
+Please use the information I shared in our last chat.,REQUEST,UNCLEAR_SCOPE,PREVIOUS_CONVERSATION
+Repeat what we agreed on in the previous conversation.,REQUEST,UNCLEAR_SCOPE,PREVIOUS_CONVERSATION
+Help me pick up the discussion from before.,REQUEST,UNCLEAR_SCOPE,PREVIOUS_CONVERSATION
+Please refer to my earlier message about this.,REQUEST,UNCLEAR_SCOPE,PREVIOUS_CONVERSATION
+Continue explaining the topic we discussed previously.,REQUEST,UNCLEAR_SCOPE,PREVIOUS_CONVERSATION
+"The details were shared in an earlier conversation, not in this message.",DESCRIPTIVE,UNCLEAR_SCOPE,PREVIOUS_CONVERSATION
+This request refers to a topic we discussed in a previous chat.,DESCRIPTIVE,UNCLEAR_SCOPE,PREVIOUS_CONVERSATION
+The relevant information appeared in our earlier exchange.,DESCRIPTIVE,UNCLEAR_SCOPE,PREVIOUS_CONVERSATION
+I am referring to a recommendation from a conversation we had before.,DESCRIPTIVE,UNCLEAR_SCOPE,PREVIOUS_CONVERSATION
+The context for my question was provided in a previous discussion.,DESCRIPTIVE,UNCLEAR_SCOPE,PREVIOUS_CONVERSATION
+"This is a continuation of an earlier topic, but its details are not included here.",DESCRIPTIVE,UNCLEAR_SCOPE,PREVIOUS_CONVERSATION
+The subject was explained in another chat session.,DESCRIPTIVE,UNCLEAR_SCOPE,PREVIOUS_CONVERSATION
+My current message depends on information from our previous interaction.,DESCRIPTIVE,UNCLEAR_SCOPE,PREVIOUS_CONVERSATION
+Like I mentioned before.,OTHER,UNCLEAR_SCOPE,PREVIOUS_CONVERSATION
+About what we discussed last time.,OTHER,UNCLEAR_SCOPE,PREVIOUS_CONVERSATION
+Going back to our earlier conversation.,OTHER,UNCLEAR_SCOPE,PREVIOUS_CONVERSATION
+The same topic from yesterday.,OTHER,UNCLEAR_SCOPE,PREVIOUS_CONVERSATION
+As I told you in the previous chat.,OTHER,UNCLEAR_SCOPE,PREVIOUS_CONVERSATION
+Remember what we talked about?,OTHER,UNCLEAR_SCOPE,PREVIOUS_CONVERSATION
+Following up on my earlier message.,OTHER,UNCLEAR_SCOPE,PREVIOUS_CONVERSATION
+That thing I brought up before.,OTHER,UNCLEAR_SCOPE,PREVIOUS_CONVERSATION
+Something isn't working as expected. Can you help?,QUESTION,UNCLEAR_SCOPE,UNSPECIFIED_PROBLEMS
+Why am I having an issue with this?,QUESTION,UNCLEAR_SCOPE,UNSPECIFIED_PROBLEMS
+Can you help me understand what's going wrong?,QUESTION,UNCLEAR_SCOPE,UNSPECIFIED_PROBLEMS
+Is there a way to resolve this problem?,QUESTION,UNCLEAR_SCOPE,UNSPECIFIED_PROBLEMS
+What could be causing this issue?,QUESTION,UNCLEAR_SCOPE,UNSPECIFIED_PROBLEMS
+Could you look into a problem I'm experiencing?,QUESTION,UNCLEAR_SCOPE,UNSPECIFIED_PROBLEMS
+How can I get this issue sorted out?,QUESTION,UNCLEAR_SCOPE,UNSPECIFIED_PROBLEMS
+Do you know why I'm experiencing a problem?,QUESTION,UNCLEAR_SCOPE,UNSPECIFIED_PROBLEMS
+I've been experiencing an issue lately.,PERSONAL,UNCLEAR_SCOPE,UNSPECIFIED_PROBLEMS
+Something has been going wrong on my end.,PERSONAL,UNCLEAR_SCOPE,UNSPECIFIED_PROBLEMS
+I'm having trouble with something and it's frustrating.,PERSONAL,UNCLEAR_SCOPE,UNSPECIFIED_PROBLEMS
+I've run into a problem that I can't seem to resolve.,PERSONAL,UNCLEAR_SCOPE,UNSPECIFIED_PROBLEMS
+Things haven't been working properly for me.,PERSONAL,UNCLEAR_SCOPE,UNSPECIFIED_PROBLEMS
+I'm dealing with an issue that keeps bothering me.,PERSONAL,UNCLEAR_SCOPE,UNSPECIFIED_PROBLEMS
+I've noticed something isn't right.,PERSONAL,UNCLEAR_SCOPE,UNSPECIFIED_PROBLEMS
+I'm struggling with a problem at the moment.,PERSONAL,UNCLEAR_SCOPE,UNSPECIFIED_PROBLEMS
+Please help me resolve an issue.,REQUEST,UNCLEAR_SCOPE,UNSPECIFIED_PROBLEMS
+I need assistance with a problem I'm facing.,REQUEST,UNCLEAR_SCOPE,UNSPECIFIED_PROBLEMS
+Could you investigate what's going wrong?,REQUEST,UNCLEAR_SCOPE,UNSPECIFIED_PROBLEMS
+Please check the issue I'm experiencing.,REQUEST,UNCLEAR_SCOPE,UNSPECIFIED_PROBLEMS
+Help me figure out why this isn't working.,REQUEST,UNCLEAR_SCOPE,UNSPECIFIED_PROBLEMS
+I'd appreciate your help fixing this problem.,REQUEST,UNCLEAR_SCOPE,UNSPECIFIED_PROBLEMS
+Please look into this issue for me.,REQUEST,UNCLEAR_SCOPE,UNSPECIFIED_PROBLEMS
+I need someone to help me sort this out.,REQUEST,UNCLEAR_SCOPE,UNSPECIFIED_PROBLEMS
+An unexpected issue has occurred during my experience.,DESCRIPTIVE,UNCLEAR_SCOPE,UNSPECIFIED_PROBLEMS
+There appears to be a problem affecting the normal process.,DESCRIPTIVE,UNCLEAR_SCOPE,UNSPECIFIED_PROBLEMS
+Something has stopped functioning the way it normally does.,DESCRIPTIVE,UNCLEAR_SCOPE,UNSPECIFIED_PROBLEMS
+"An issue has emerged, but its cause is not yet known.",DESCRIPTIVE,UNCLEAR_SCOPE,UNSPECIFIED_PROBLEMS
+The situation has become problematic without an obvious explanation.,DESCRIPTIVE,UNCLEAR_SCOPE,UNSPECIFIED_PROBLEMS
+A problem is interfering with what I am trying to do.,DESCRIPTIVE,UNCLEAR_SCOPE,UNSPECIFIED_PROBLEMS
+There is an unresolved issue affecting my current experience.,DESCRIPTIVE,UNCLEAR_SCOPE,UNSPECIFIED_PROBLEMS
+Something unexpected is preventing things from working normally.,DESCRIPTIVE,UNCLEAR_SCOPE,UNSPECIFIED_PROBLEMS
+Having an issue here.,OTHER,UNCLEAR_SCOPE,UNSPECIFIED_PROBLEMS
+Something went wrong.,OTHER,UNCLEAR_SCOPE,UNSPECIFIED_PROBLEMS
+This isn't working properly.,OTHER,UNCLEAR_SCOPE,UNSPECIFIED_PROBLEMS
+I'm facing a problem.,OTHER,UNCLEAR_SCOPE,UNSPECIFIED_PROBLEMS
+There's something wrong on my end.,OTHER,UNCLEAR_SCOPE,UNSPECIFIED_PROBLEMS
+Running into an issue.,OTHER,UNCLEAR_SCOPE,UNSPECIFIED_PROBLEMS
+Not working the way it should.,OTHER,UNCLEAR_SCOPE,UNSPECIFIED_PROBLEMS
+Got a problem that needs attention.,OTHER,UNCLEAR_SCOPE,UNSPECIFIED_PROBLEMS
+What's happening with it?,QUESTION,UNCLEAR_SCOPE,UNCLEAR_STATUS
+Can you tell me where things stand?,QUESTION,UNCLEAR_SCOPE,UNCLEAR_STATUS
+Is there any update on this?,QUESTION,UNCLEAR_SCOPE,UNCLEAR_STATUS
+What is its current status?,QUESTION,UNCLEAR_SCOPE,UNCLEAR_STATUS
+Has anything changed so far?,QUESTION,UNCLEAR_SCOPE,UNCLEAR_STATUS
+Could you check how things are going?,QUESTION,UNCLEAR_SCOPE,UNCLEAR_STATUS
+Is everything still the same?,QUESTION,UNCLEAR_SCOPE,UNCLEAR_STATUS
+Do you know if it's been handled yet?,QUESTION,UNCLEAR_SCOPE,UNCLEAR_STATUS
+I'm not sure what's going on with it right now.,PERSONAL,UNCLEAR_SCOPE,UNCLEAR_STATUS
+I've been wondering whether anything has changed.,PERSONAL,UNCLEAR_SCOPE,UNCLEAR_STATUS
+I don't know where things currently stand.,PERSONAL,UNCLEAR_SCOPE,UNCLEAR_STATUS
+I'm a little confused about its current situation.,PERSONAL,UNCLEAR_SCOPE,UNCLEAR_STATUS
+I haven't been able to tell what's happening.,PERSONAL,UNCLEAR_SCOPE,UNCLEAR_STATUS
+I'm waiting to understand where things stand.,PERSONAL,UNCLEAR_SCOPE,UNCLEAR_STATUS
+It's unclear to me whether anything has progressed.,PERSONAL,UNCLEAR_SCOPE,UNCLEAR_STATUS
+I'm unsure if the situation is still the same.,PERSONAL,UNCLEAR_SCOPE,UNCLEAR_STATUS
+Please let me know its current status.,REQUEST,UNCLEAR_SCOPE,UNCLEAR_STATUS
+Could you provide an update on this?,REQUEST,UNCLEAR_SCOPE,UNCLEAR_STATUS
+Please check whether anything has changed.,REQUEST,UNCLEAR_SCOPE,UNCLEAR_STATUS
+Let me know where things stand right now.,REQUEST,UNCLEAR_SCOPE,UNCLEAR_STATUS
+I'd like to know if this has been completed.,REQUEST,UNCLEAR_SCOPE,UNCLEAR_STATUS
+Please confirm the current situation.,REQUEST,UNCLEAR_SCOPE,UNCLEAR_STATUS
+Can you find out what's happening with it?,REQUEST,UNCLEAR_SCOPE,UNCLEAR_STATUS
+Please tell me whether there has been any progress.,REQUEST,UNCLEAR_SCOPE,UNCLEAR_STATUS
+The current state of the matter is not clear.,DESCRIPTIVE,UNCLEAR_SCOPE,UNCLEAR_STATUS
+There is no indication of how things are progressing.,DESCRIPTIVE,UNCLEAR_SCOPE,UNCLEAR_STATUS
+The situation remains uncertain at this point.,DESCRIPTIVE,UNCLEAR_SCOPE,UNCLEAR_STATUS
+It is not apparent whether the matter has changed.,DESCRIPTIVE,UNCLEAR_SCOPE,UNCLEAR_STATUS
+The latest position has not been established.,DESCRIPTIVE,UNCLEAR_SCOPE,UNCLEAR_STATUS
+There is uncertainty about whether any progress has occurred.,DESCRIPTIVE,UNCLEAR_SCOPE,UNCLEAR_STATUS
+The present condition of the matter is unknown.,DESCRIPTIVE,UNCLEAR_SCOPE,UNCLEAR_STATUS
+No clear status information is currently available.,DESCRIPTIVE,UNCLEAR_SCOPE,UNCLEAR_STATUS
+Any news on this?,OTHER,UNCLEAR_SCOPE,UNCLEAR_STATUS
+Where does it stand?,OTHER,UNCLEAR_SCOPE,UNCLEAR_STATUS
+Still waiting for an update.,OTHER,UNCLEAR_SCOPE,UNCLEAR_STATUS
+Not sure what's going on.,OTHER,UNCLEAR_SCOPE,UNCLEAR_STATUS
+Has there been any progress?,OTHER,UNCLEAR_SCOPE,UNCLEAR_STATUS
+What's the latest?,OTHER,UNCLEAR_SCOPE,UNCLEAR_STATUS
+Is it sorted out yet?,OTHER,UNCLEAR_SCOPE,UNCLEAR_STATUS
+Any change so far?,OTHER,UNCLEAR_SCOPE,UNCLEAR_STATUS

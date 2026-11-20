@@ -1,0 +1,50 @@
+# Python
+__pycache__/
+*.py[cod]
+
+# Virtual Environment
+.venv/
+venv/
+env/
+
+# Testing
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# macOS
+.DS_Store
+__MACOSX/
+
+# Environment Variables
+.env
+.env.*
+!.env.example
+
+# IDE
+.vscode/
+.idea/
+
+# Logs
+*.log
+
+# Raw source data
+data/raw/
+
+# Exclude historical datasets; keep the synthetic Scope V3 dataset
+data/*
+!data/processed/
+data/processed/*
+!data/processed/scope_detection_v3.csv
+
+# Keep only the three models used by the application
+models/*
+!models/lumora_model_v2.joblib
+!models/lumora_intent_model_v2.joblib
+!models/scope_detection_v3.joblib
+
+# Local documentation backups
+*.backup_*

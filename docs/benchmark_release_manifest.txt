@@ -1,0 +1,130 @@
+AWN AI — SCOPE DETECTION V3 RELEASE MANIFEST
+
+Manifest Version: 2.0
+Release: Scope Detection V3
+Created: 2026-11-20
+Project: AWN AI
+Annotation Guidelines Version: 2.0
+Benchmark Specification Version: 2.0
+
+==================================================
+1. DATASET RELEASE
+==================================================
+
+File: data/processed/scope_detection_v3.csv
+Rows: 600
+Columns: 4
+SHA-256: e864390b8c108efe91e218515cbbd605431cfca2df58c7adb19dca858b28abba
+
+Class Distribution:
+- IN_SCOPE: 200
+- OUT_OF_SCOPE: 200
+- UNCLEAR_SCOPE: 200
+
+Dataset Structure:
+- 15 linguistic patterns
+- 5 writing styles
+- 8 messages per style-pattern combination
+
+Dataset Quality Assurance:
+- Total quality checks: 15
+- Passed: 15
+- Failed: 0
+
+==================================================
+2. FINAL MODEL ARTIFACT
+==================================================
+
+File: models/scope_detection_v3.joblib
+SHA-256: a49389832d617f857460a0c2f1787b990d700594092c789ab13c7fe9406f9942
+
+Selected Model: V2
+Classifier: LinearSVC
+Feature Extraction:
+- Word-level TF-IDF
+- Character-level TF-IDF
+
+Training Dataset: 600 examples
+
+Model Artifact:
+- Saved successfully.
+- Reloaded successfully.
+- Predictions before and after reloading matched.
+
+==================================================
+3. MODEL EVALUATION SUMMARY
+==================================================
+
+Evaluation Strategy:
+- StratifiedGroupKFold
+- 5 folds
+- Grouping variable: pattern
+- 480 training examples per fold
+- 120 evaluation examples per fold
+
+V1 Mean Fold Macro F1: 0.803732
+V2 Mean Fold Macro F1: 0.852994
+
+V2 Standard Deviation: 0.074751
+V2 Minimum Fold Macro F1: 0.754556
+V2 Maximum Fold Macro F1: 0.923036
+
+V2 Class F1:
+- IN_SCOPE: 0.823529
+- OUT_OF_SCOPE: 0.904872
+- UNCLEAR_SCOPE: 0.835443
+
+IN_SCOPE Recall: 0.770
+
+V2 outperformed V1 in all five evaluation folds.
+
+Note:
+Mean Fold Macro F1 represents the average of the five fold-level Macro F1 scores. It is not an out-of-fold Macro F1 score.
+
+==================================================
+4. HISTORICAL BENCHMARK REFERENCE
+==================================================
+
+The earlier Lumora Benchmark v1.0 is maintained separately.
+
+Historical Manifest:
+docs/benchmark_release_manifest_v1.txt
+
+Historical Specification:
+docs/benchmark_specification_v1.md
+
+Historical Dataset Files:
+- data/benchmark/development.csv
+- data/benchmark/locked_test.csv
+- data/benchmark/challenge.csv
+
+Historical Total: 157 examples
+Historical Recorded Audit: 21/21 PASS
+
+The historical benchmark and its audit results are separate from Scope Detection V3 and must not be combined with its evaluation metrics.
+
+==================================================
+5. LIMITATIONS AND INTEGRITY
+==================================================
+
+- Scope Detection V3 contains synthetic, manually authored messages.
+- Its evaluation results do not guarantee production performance.
+- A complete historical V1/V2 overlap audit was not established for every dataset batch.
+- LinearSVC decision margins are not probabilities.
+- Full-dataset training predictions are not independent evaluation results.
+
+The SHA-256 values identify the exact dataset and model artifact recorded in this manifest. Any subsequent file modification will change its hash.
+
+==================================================
+6. RELEASE STATUS
+==================================================
+
+Scope Detection V3:
+IMPLEMENTED AND EVALUATED
+
+Dataset: 600 examples
+Dataset Quality: 15/15 checks passed
+Selected Model: V2
+Final Model Artifact: Saved and reload-verified
+
+This manifest records the Scope Detection V3 release independently of the historical Lumora Benchmark v1.0.
