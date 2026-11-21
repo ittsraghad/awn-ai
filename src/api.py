@@ -1,8 +1,8 @@
 from pathlib import Path
 
-from fastapi import FastAPI, HTTPException
+from fastapi import FastAPI, HTTPException, Request
 from fastapi.middleware.cors import CORSMiddleware
-from fastapi.responses import FileResponse
+from fastapi.responses import HTMLResponse, Response
 from fastapi.staticfiles import StaticFiles
 from pydantic import BaseModel, Field
 
@@ -59,9 +59,12 @@ class ChatResponse(BaseModel):
     sources: list[dict]
 
 
-@app.get("/")
-def root():
-    return FileResponse(INDEX_FILE)
+@app.api_route("/", methods=["GET", "HEAD"])
+def root(request: Request):
+    html_content = INDEX_FILE.read_text(encoding="utf-8")
+    if request.method == "HEAD":
+        return Response(status_code=200, media_type="text/html", headers={"Content-Length": str(len(html_content.encode("utf-8")))})
+    return HTMLResponse(content=html_content)
 
 
 @app.get("/health")
